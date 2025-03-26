@@ -1,0 +1,36 @@
+.list {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  border-right: 1px solid gray;
+  padding-right: 15px;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  border-top: 2px solid #e5e5e5;
+}
+
+.link:hover {
+  color: #e93d07;
+}
+.mini {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lupa:hover {
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+.lupa {
+  border: 1px solid transparent;
+  padding: 2px 6px;
+}
