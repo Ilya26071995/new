@@ -6,6 +6,7 @@ import { BigTitle } from "./components/BigTitle/index";
 import { Options } from "./components/Options/index";
 import { Info } from "./components/Info/index";
 import { Subscription } from "./components/Subscription/index";
+import { Download } from "./components/Download/index";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Options />
       <Info />
       <Subscription />
+      <Download />
     </div>
   );
 }
