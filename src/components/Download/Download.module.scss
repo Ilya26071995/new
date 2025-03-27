@@ -1,3 +1,49 @@
 .container {
-  padding: 0 50px;
+  display: flex;
+}
+
+.title {
+  width: 50%;
+}
+
+.head {
+  color: white;
+  background-color: black;
+  padding: 30px 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 125%;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.files {
+  background-color: #e93d07;
+  width: 50%;
+  display: flex;
+  gap: 250px;
+  padding-left: 100px;
+}
+
+.option {
+  padding-top: 35px;
+}
+
+.option:hover .text {
+  color: black;
+}
+
+.text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  width: 50px;
+}
+
+.flex {
+  display: flex;
+  gap: 15px;
 }

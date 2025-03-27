@@ -21,7 +21,9 @@ const Subscription = () => {
     <div className={s.container}>
       <ul className={s.list}>
         {Titles.map(({ title }: TitleType, index) => (
-          <li className={s.option}>{title}</li>
+          <li className={s.option} key={index}>
+            {title}
+          </li>
         ))}
       </ul>
       <div className={s.white}></div>
