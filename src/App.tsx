@@ -7,6 +7,7 @@ import { Options } from "./components/Options/index";
 import { Info } from "./components/Info/index";
 import { Subscription } from "./components/Subscription/index";
 import { Download } from "./components/Download/index";
+import { Footer } from "./components/Footer/index";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Info />
       <Subscription />
       <Download />
+      <Footer />
     </div>
   );
 }
