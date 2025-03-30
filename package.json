@@ -12,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "@types/react-dom": "^17.0.26",
+    "@types/react-router-dom": "^5.3.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.11.0",
     "html-webpack-plugin": "^5.6.3",
@@ -30,6 +31,7 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "cross-env": "^7.0.3",
+    "react-router-dom": "^5.3.3",
     "render": "^0.1.4",
     "swiper": "^11.2.6"
   }

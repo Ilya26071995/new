@@ -8,19 +8,20 @@ import { Info } from "./components/Info/index";
 import { Subscription } from "./components/Subscription/index";
 import { Download } from "./components/Download/index";
 import { Footer } from "./components/Footer/index";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "./components/Pages/Home";
+import { Contacts } from "./components/Pages/Contacts";
 
 function App() {
   return (
-    <div className={s.App}>
-      <Connection />
-      <Navigation />
-      <BigTitle />
-      <Options />
-      <Info />
-      <Subscription />
-      <Download />
-      <Footer />
-    </div>
+    <Router>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route exact path="/contacts">
+        <Contacts />
+      </Route>
+    </Router>
   );
 }
 

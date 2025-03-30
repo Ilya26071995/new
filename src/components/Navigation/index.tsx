@@ -1,13 +1,14 @@
 import React from "react";
 import s from "./Navigation.module.scss";
+import { Link, Route, Router, Switch } from "react-router-dom";
 
 const Navs = [
-  { href: "https//www.cd.ru", text: "ГЛАВНАЯ" },
-  { href: "https//www.cd.ru", text: "КАТАЛОГ" },
-  { href: "https//www.cd.ru", text: "ТЕХНОЛОГИЯ МОНТАЖА" },
-  { href: "https//www.cd.ru", text: "ПРАЙС" },
-  { href: "https//www.cd.ru", text: "КЕЙСЫ" },
-  { href: "https//www.cd.ru", text: "КОНТАКТЫ" },
+  { href: "/", text: "ГЛАВНАЯ" },
+  { href: "/contacts", text: "КАТАЛОГ" },
+  { href: "/contacts", text: "ТЕХНОЛОГИЯ МОНТАЖА" },
+  { href: "/contacts", text: "ПРАЙС" },
+  { href: "/contacts", text: "КЕЙСЫ" },
+  { href: "/contacts", text: "КОНТАКТЫ" },
 ];
 
 interface NavsType {
@@ -25,9 +26,9 @@ const Navigation = () => {
         <ul className={s.list}>
           {Navs.map(({ href, text }: NavsType, index) => (
             <li key={index}>
-              <a href={href} className={s.link}>
+              <Link to={href} className={s.link}>
                 {text}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
