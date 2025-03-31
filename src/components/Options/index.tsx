@@ -81,8 +81,9 @@ const Options = () => {
             <h1 className={s.filterTitle}>Материал основания</h1>
           </div>
           <form>
-            <label htmlFor="material">Выбрать материал</label>
-            <select id="material" name="material">
+            <label htmlFor='material'>Выбрать материал</label>
+            <select id='material' name='material'>
+              {/* Вынести в переменную */}
               <option>Материал 1</option>
               <option>Материал 2</option>
               <option>Материал 3</option>
@@ -98,13 +99,11 @@ const Options = () => {
               <img src={img} />
               <h3 className={s.titleMini}>{title}</h3>
               <div className={s.subscribes}>
-                {Subscribes.map(
-                  ({ subscribe, style }: SubscribesType, index) => (
-                    <span className={s[style]} key={index}>
-                      {subscribe}
-                    </span>
-                  )
-                )}
+                {Subscribes.map(({ subscribe, style }: SubscribesType, index) => (
+                  <span className={s[style]} key={index}>
+                    {subscribe}
+                  </span>
+                ))}
               </div>
             </li>
           ))}

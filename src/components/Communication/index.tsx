@@ -47,6 +47,7 @@ interface ContType {
   miniTitle: string;
   img?: string;
   alt?: string;
+  //TODO: Сделать массивом строк
   text1: string;
   text2?: string;
   text3?: string;
@@ -57,19 +58,9 @@ const Communication = ({ title }: CommunicationType) => {
     <div className={s.container}>
       <div>
         <h2 className={s.title}>{title}</h2>
-        {Cont.map(
-          ({ miniTitle, img, alt, text1, text2, text3 }: ContType, index) => (
-            <Contacts
-              miniTitle={miniTitle}
-              img={img}
-              alt={alt}
-              text1={text1}
-              text2={text2}
-              text3={text3}
-              key={index}
-            />
-          )
-        )}
+        {Cont.map(({ miniTitle, img, alt, text1, text2, text3 }: ContType, index) => (
+          <Contacts miniTitle={miniTitle} img={img} alt={alt} text1={text1} text2={text2} text3={text3} key={index} />
+        ))}
       </div>
     </div>
   );

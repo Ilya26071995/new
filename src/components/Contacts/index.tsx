@@ -5,19 +5,13 @@ interface ContactsType {
   miniTitle: string;
   img?: string;
   alt?: string;
+  // TODO: Сделать массивом строк
   text1: string;
   text2?: string;
   text3?: string;
 }
 
-const Contacts = ({
-  miniTitle,
-  img,
-  alt,
-  text1,
-  text2,
-  text3,
-}: ContactsType) => {
+const Contacts = ({ miniTitle, img, alt, text1, text2, text3 }: ContactsType) => {
   return (
     <div className={s.container}>
       <div className={s.titleIMG}>
