@@ -62,6 +62,8 @@ interface SubscribesType {
   style: string;
 }
 
+const SELECTS = ["Материал 1", "Материал 2", "Материал 3", "Материал 4"];
+
 const Options = () => {
   return (
     <div className={s.big}>
@@ -77,17 +79,20 @@ const Options = () => {
           </ul>
         </div>
         <div className={s.filter}>
-          <div>
+          <div className={s.filterHead}>
             <h1 className={s.filterTitle}>Материал основания</h1>
+            <img src="./img/filterIcon.svg" alt="filter" />
           </div>
           <form>
-            <label htmlFor='material'>Выбрать материал</label>
-            <select id='material' name='material'>
-              {/* Вынести в переменную */}
-              <option>Материал 1</option>
-              <option>Материал 2</option>
-              <option>Материал 3</option>
-              <option>Материал 4</option>
+            <label htmlFor="material"></label>
+            <select id="material" name="material">
+              {SELECTS.map((select, index) => {
+                return (
+                  <option className={s.options} key={index}>
+                    {select}
+                  </option>
+                );
+              })}
             </select>
           </form>
         </div>
@@ -99,11 +104,13 @@ const Options = () => {
               <img src={img} />
               <h3 className={s.titleMini}>{title}</h3>
               <div className={s.subscribes}>
-                {Subscribes.map(({ subscribe, style }: SubscribesType, index) => (
-                  <span className={s[style]} key={index}>
-                    {subscribe}
-                  </span>
-                ))}
+                {Subscribes.map(
+                  ({ subscribe, style }: SubscribesType, index) => (
+                    <span className={s[style]} key={index}>
+                      {subscribe}
+                    </span>
+                  )
+                )}
               </div>
             </li>
           ))}
