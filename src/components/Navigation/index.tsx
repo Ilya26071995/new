@@ -1,8 +1,8 @@
 import React from "react";
 import s from "./Navigation.module.scss";
-import { Link, Route, Router, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Navs = [
+const NAVS = [
   { href: "/", text: "ГЛАВНАЯ" },
   { href: "/contacts", text: "КАТАЛОГ" },
   { href: "/contacts", text: "ТЕХНОЛОГИЯ МОНТАЖА" },
@@ -24,7 +24,7 @@ const Navigation = () => {
       </div>
       <div className={s.mini}>
         <ul className={s.list}>
-          {Navs.map(({ href, text }: NavsType, index) => (
+          {NAVS.map(({ href, text }: NavsType, index) => (
             <li key={index}>
               <Link to={href} className={s.link}>
                 {text}

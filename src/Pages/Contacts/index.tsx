@@ -1,10 +1,10 @@
 import React from "react";
 import s from "./Contacts.module.scss";
-import { Navigation } from "../../Navigation";
-import { Connection } from "../../Connection/Index";
-import { BigTitle } from "../../BigTitle/index";
-import { Picture } from "../../Picture";
-import { Communication } from "../../Communication";
+import { Navigation } from "../../components/Navigation";
+import { Connection } from "../../components/Connection/Index";
+import { BigTitle } from "../../components/BigTitle/index";
+import { Picture } from "../../components/Picture";
+import { Communication } from "../../components/Communication";
 
 const Comm = [{ title: "Офис" }, { title: "Склад" }];
 

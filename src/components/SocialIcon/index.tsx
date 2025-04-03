@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./SocialIcons.module.scss";
 
-const SocialIcons = [
+const SOCIALICONS = [
   {
     link: "https://www.facebook.com",
     img: "../img/facebook.svg",
@@ -24,7 +24,7 @@ interface SocialIconsType {
 const SocialIcon = () => {
   return (
     <div className={s.soc}>
-      {SocialIcons.map(({ link, img, text }: SocialIconsType, index) => (
+      {SOCIALICONS.map(({ link, img, text }: SocialIconsType, index) => (
         <a href={link} key={index}>
           <img src={img} alt={text} />
         </a>

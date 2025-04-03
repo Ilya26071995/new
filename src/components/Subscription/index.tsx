@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import s from "./Subscription.module.scss";
 
-const Titles = [
+const TITLES = [
   { title: "Продукция" },
   { title: "Описание" },
   { title: "Габариты и вес" },
@@ -20,7 +20,7 @@ const Subscription = () => {
   return (
     <div className={s.container}>
       <ul className={s.list}>
-        {Titles.map(({ title }: TitleType, index) => (
+        {TITLES.map(({ title }: TitleType, index) => (
           <li className={s.option} key={index}>
             {title}
           </li>

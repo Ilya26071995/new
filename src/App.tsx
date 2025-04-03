@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Home } from "./components/Pages/Home";
-import { Contacts } from "./components/Pages/Contacts";
+import { Home } from "./Pages/Home";
+import { Contacts } from "./Pages/Contacts";
 
 function App() {
   return (

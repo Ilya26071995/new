@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Download.module.scss";
 
-const Files = [
+const FILES = [
   {
     img: "../img/presentIcon.png",
     alt: "Стеновые панели Интерпан",
@@ -33,7 +33,7 @@ const Download = () => {
         </h2>
       </div>
       <div className={s.files}>
-        {Files.map(({ img, alt, link, text }: FilesType, index) => (
+        {FILES.map(({ img, alt, link, text }: FilesType, index) => (
           <div className={s.option} key={index}>
             <a className={s.flex} href={link} download>
               <img src={img} alt={alt} />

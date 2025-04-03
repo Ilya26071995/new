@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import s from "./Options.module.scss";
 import { Btn } from "../Button/index";
+import cn from "classnames";
 
-const OptionsArray = [
+const OPTIONSARRAY = [
   { text: "Административные  помещения" },
   { text: "Спортивные объекты" },
   { text: "Общепит" },
@@ -25,7 +26,7 @@ interface OptionsArrayType {
   text: string;
 }
 
-const Goods = [
+const GOODS = [
   { img: "../img/imgCork.png", title: "Панели — Эконом Pixel" },
   { img: "../img/imgCork.png", title: "Панели окрашенные — Econom" },
   { img: "../img/imgCork.png", title: "Панели — Econom Loft" },
@@ -50,7 +51,7 @@ interface GoodsType {
   title: string;
 }
 
-const Subscribes = [
+const SUBSCRIBES = [
   { subscribe: "гсп", style: "red" },
   { subscribe: "гкм", style: "blue" },
   { subscribe: "смл", style: "green" },
@@ -71,7 +72,7 @@ const Options = () => {
         <div className={s.zone}>
           <h2 className={s.title}>Функциональная зона</h2>
           <ul className={s.list}>
-            {OptionsArray.map(({ text }: OptionsArrayType, index) => (
+            {OPTIONSARRAY.map(({ text }: OptionsArrayType, index) => (
               <li key={index} className={s.option}>
                 {text}
               </li>
@@ -83,9 +84,16 @@ const Options = () => {
             <h1 className={s.filterTitle}>Материал основания</h1>
             <img src="./img/filterIcon.svg" alt="filter" />
           </div>
-          <form>
+          <form className={s.form}>
             <label htmlFor="material"></label>
-            <select id="material" name="material">
+            <select
+              className={cn(s.options, s.select)}
+              id="material"
+              name="material"
+            >
+              <option className={s.options} hidden>
+                Выбрать материал
+              </option>
               {SELECTS.map((select, index) => {
                 return (
                   <option className={s.options} key={index}>
@@ -99,12 +107,12 @@ const Options = () => {
       </div>
       <div className={s.bigContainer}>
         <ul className={s.goods}>
-          {Goods.map(({ img, title }: GoodsType, index) => (
+          {GOODS.map(({ img, title }: GoodsType, index) => (
             <li className={s.good} key={index}>
               <img src={img} />
               <h3 className={s.titleMini}>{title}</h3>
               <div className={s.subscribes}>
-                {Subscribes.map(
+                {SUBSCRIBES.map(
                   ({ subscribe, style }: SubscribesType, index) => (
                     <span className={s[style]} key={index}>
                       {subscribe}

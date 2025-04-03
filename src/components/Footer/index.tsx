@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Footer.module.scss";
 import { SocialIcon } from "../SocialIcon/index";
 
-const Navs = [
+const NAVS = [
   { href: "https//www.cd.ru", text: "Главная" },
   { href: "https//www.cd.ru", text: "Каталог" },
   { href: "https//www.cd.ru", text: "Технологии монтажа" },
@@ -16,7 +16,7 @@ interface NavsType {
   text: string;
 }
 
-const Connections = [
+const CONNECTIONS = [
   {
     link: "https://mail.ru/",
     vid: "mail",
@@ -52,7 +52,7 @@ const Footer = () => {
         <div>
           <h2 className={s.title}>Меню</h2>
           <ul className={s.list}>
-            {Navs.map(({ href, text }: NavsType, index) => (
+            {NAVS.map(({ href, text }: NavsType, index) => (
               <li key={index}>
                 <a href={href} className={s.link}>
                   {text}
@@ -64,7 +64,7 @@ const Footer = () => {
         <div className={s.connect}>
           <div className={s.flex}>
             <h2 className={s.title}>Связаться с нами</h2>
-            {Connections.map(
+            {CONNECTIONS.map(
               ({ link, vid, text, img }: ConnectionsType, index) => (
                 <div className={s.link} key={index}>
                   <img src={img} className={img} />

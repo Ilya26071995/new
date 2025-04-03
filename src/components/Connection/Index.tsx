@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Connection.module.scss";
 import { SocialIcon } from "../SocialIcon/index";
 
-const Connections = [
+const CONNECTION = [
   {
     link: "https://mail.ru/",
     vid: "mail",
@@ -29,7 +29,7 @@ const Connection = () => {
   return (
     <div className={s.container}>
       <div className={s.connect}>
-        {Connections.map(({ link, vid, text, img }: ConnectionsType, index) => (
+        {CONNECTION.map(({ link, vid, text, img }: ConnectionsType, index) => (
           <div className={s.link} key={index}>
             <img src={img} className={img} />
             <a className={s[vid]} href={link}>
