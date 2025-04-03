@@ -5,6 +5,8 @@ import { Connection } from "../../components/Connection/Index";
 import { BigTitle } from "../../components/BigTitle/index";
 import { Picture } from "../../components/Picture";
 import { Communication } from "../../components/Communication";
+import { Footer } from "../../components/Footer";
+import { Delivery } from "../../components/Delivery";
 
 const Comm = [{ title: "Офис" }, { title: "Склад" }];
 
@@ -24,6 +26,8 @@ const Contacts = () => {
           <Communication title={title} key={index} />
         ))}
       </div>
+      <Delivery />
+      <Footer />
     </div>
   );
 };
