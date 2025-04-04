@@ -29,9 +29,9 @@ const Delivery = () => {
   return (
     <div className={s.background}>
       {INFO.map(({ title, text }: InfoType, index) => (
-        <div key={index}>
-          <h2>{title}</h2>
-          <p>{text}</p>
+        <div className={s.block} key={index}>
+          <h2 className={s.title}>{title}</h2>
+          <p className={s.text}>{text}</p>
         </div>
       ))}
     </div>
