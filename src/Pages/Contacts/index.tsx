@@ -7,6 +7,7 @@ import { Picture } from "../../components/Picture";
 import { Communication } from "../../components/Communication";
 import { Footer } from "../../components/Footer";
 import { Delivery } from "../../components/Delivery";
+import { Form } from "../../components/Form";
 
 const Comm = [{ title: "Офис" }, { title: "Склад" }];
 
@@ -27,6 +28,7 @@ const Contacts = () => {
         ))}
       </div>
       <Delivery />
+      <Form />
       <Footer />
     </div>
   );

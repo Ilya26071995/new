@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./Options.module.scss";
 import { Btn } from "../Button/index";
 import cn from "classnames";
+import { Filter } from "../Filter";
 
 const OPTIONSARRAY = [
   { text: "Административные  помещения" },
@@ -79,31 +80,7 @@ const Options = () => {
             ))}
           </ul>
         </div>
-        <div className={s.filter}>
-          <div className={s.filterHead}>
-            <h1 className={s.filterTitle}>Материал основания</h1>
-            <img src="./img/filterIcon.svg" alt="filter" />
-          </div>
-          <form className={s.form}>
-            <label htmlFor="material"></label>
-            <select
-              className={cn(s.options, s.select)}
-              id="material"
-              name="material"
-            >
-              <option className={s.options} hidden>
-                Выбрать материал
-              </option>
-              {SELECTS.map((select, index) => {
-                return (
-                  <option className={s.options} key={index}>
-                    {select}
-                  </option>
-                );
-              })}
-            </select>
-          </form>
-        </div>
+        <Filter filterTitle="Выбрать материал" />
       </div>
       <div className={s.bigContainer}>
         <ul className={s.goods}>

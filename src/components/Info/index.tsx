@@ -7,20 +7,16 @@ const TEXT = [
   "В соответствии с требованиями к отделке медицинских учреждений (п.4.2), продукция ООО «ТД Интерпан» имеет гладкую, антистатическую и без трещин поверхность, которая выдерживает частые уборки с использованием средств для чистки и обеззараживания.",
 ];
 
-interface TextType {
-  text: string;
-}
-
 const Info = () => {
   return (
     <div className={s.container}>
       <h2 className={s.title}>Медицина</h2>
       <div className={s.cont}>
-        <p className={s.text}>
-          {TEXT.map((tex) => (
-            <p>{tex}</p>
-          ))}
-        </p>
+        {TEXT.map((tex, index) => (
+          <p className={s.text} key={index}>
+            {tex}
+          </p>
+        ))}
       </div>
     </div>
   );
