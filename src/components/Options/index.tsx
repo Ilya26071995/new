@@ -101,7 +101,7 @@ const Options = () => {
           ))}
         </ul>
       </div>
-      <Btn>показать еще</Btn>
+      <Btn style="btn">показать еще</Btn>
     </div>
   );
 };

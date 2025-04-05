@@ -29,11 +29,13 @@
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "classnames": "^2.5.1",
     "cross-env": "^7.0.3",
     "react-hook-form": "^7.55.0",
     "react-router-dom": "^5.3.3",
     "render": "^0.1.4",
-    "swiper": "^11.2.6"
+    "swiper": "^11.2.6",
+    "yup": "^1.6.1"
   }
 }
