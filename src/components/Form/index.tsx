@@ -48,7 +48,7 @@ const Form = () => {
               {title}
             </label>
             <input
-              {...register("name")}
+              {...register("name")} //как сюда вместо "name" поставить meaning?
               id={id}
               className={s.input}
               type="text"
