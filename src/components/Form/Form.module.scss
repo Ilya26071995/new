@@ -19,13 +19,12 @@
   color: #101d23;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .input {
   border-radius: 20px;
   border: 1px solid #e5e5e5;
-  width: 250px;
+  width: 220px;
 }
 
 .flex {
@@ -97,4 +96,17 @@
   background-color: #fff;
   color: #e93d07;
   cursor: pointer;
+}
+
+.false {
+  background-color: #8e8f9b;
+  color: #35353b;
+  border: 1px solid #35353b;
+}
+
+.false:hover {
+  background-color: #8e8f9b;
+  color: #35353b;
+  border: 1px solid #35353b;
+  cursor: not-allowed;
 }

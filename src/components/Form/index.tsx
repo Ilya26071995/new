@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Form.module.scss";
 import { useForm } from "react-hook-form";
 import cn from "classnames";
@@ -66,6 +66,12 @@ const Form = () => {
     reset();
   };
 
+  const [disabled, setDisabled] = useState(false);
+
+  const clickFun = () => {
+    setDisabled((prevdisabled) => !prevdisabled);
+  };
+
   return (
     <div className={s.container}>
       <h2 className={s.title}>Офис</h2>
@@ -123,7 +129,7 @@ const Form = () => {
         </div>
         <div className={s.send}>
           <div className={s.checkbox}>
-            <input type="checkbox"></input>
+            <input onClick={clickFun} type="checkbox"></input>
             <p className={s.text}>
               Нажимая на кнопку «Отправить», вы соглашаетесь с{" "}
               <a
@@ -135,7 +141,12 @@ const Form = () => {
               </a>
             </p>
           </div>
-          <input className={s.btn} type="submit" value="Отправить" />
+          <input
+            className={cn(s.btn, !disabled ? s.false : "")}
+            type="submit"
+            value="Отправить"
+            disabled={!disabled}
+          />
         </div>
       </form>
     </div>
