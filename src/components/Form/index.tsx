@@ -10,8 +10,8 @@ const schema = yup.object({
     .string()
     .required("Введите номер")
     .min(10, "Минимум 11 цифр")
-    .max(11, "Максимум 11 цифр")
-    .matches(/([0-9]{3})[0-9]{3}-[0-9]{4}/, "Только цифры"),
+    .max(15, "Максимум 11 цифр")
+    .matches(/([0-9])/, "Только цифры"),
   name: yup
     .string()
     .required("Введите имя")
@@ -36,7 +36,7 @@ const LABELS = [
     id: "organization",
     type: "text",
   },
-  { title: "Телефон", id: "phone", type: "number" },
+  { title: "Телефон", id: "phone", type: "string" },
   { title: "E-mail", id: "mail", type: "text" },
 ];
 
@@ -61,20 +61,46 @@ const Form = () => {
     <div className={s.container}>
       <h2 className={s.title}>Офис</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={s.flex}>
-        {LABELS.map(({ title, id, type }: LabelsType, index) => (
-          <div className={s.miniFlex} key={index}>
-            <label htmlFor={id} className={s.label}>
-              {title}
-            </label>
-            <input
-              {...register("mail")} //как сюда вместо "name" поставить meaning?
-              id={id}
-              className={s.input}
-              type={type}
-            />
-            <p className={s.text}>{errors.mail?.message}</p>
-          </div>
-        ))}
+        <label className={s.miniFlex} htmlFor="name">
+          Ваше имя
+          <input
+            className={s.input}
+            type="text"
+            id="name"
+            {...register("name")}
+          />
+          <p>{errors.name?.message}</p>
+        </label>
+        <label className={s.miniFlex} htmlFor="phone">
+          Телефон
+          <input
+            className={s.input}
+            type="text"
+            id="phone"
+            {...register("phone")}
+          />
+          <p>{errors.phone?.message}</p>
+        </label>
+        <label className={s.miniFlex} htmlFor="organization">
+          Название организации
+          <input
+            className={s.input}
+            type="text"
+            id="organization"
+            {...register("organization")}
+          />
+          <p>{errors.organization?.message}</p>
+        </label>
+        <label className={s.miniFlex} htmlFor="mail">
+          E-mail
+          <input
+            className={s.input}
+            type="text"
+            id="mail"
+            {...register("mail")}
+          />
+          <p>{errors.mail?.message}</p>
+        </label>
         <div className={s.area}>
           <label htmlFor="text" className={s.label}>
             Текст сообщения
