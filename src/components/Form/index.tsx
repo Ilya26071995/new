@@ -22,11 +22,16 @@ const schema = yup.object({
     .string()
     .required("Введите название организации")
     .min(2, "Минимум 2 буквы")
-    .matches(/^[a-zA-Zа-яА-Я]*$/, "Только буквы"),
+    .matches(/^[a-zA-Zа-яА-Я\s]*$/, "Только буквы"),
   mail: yup
     .string()
     .required("Введите e-mail")
     .matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/),
+  text: yup
+    .string()
+    .required("Введите текст сообщения")
+    .min(20, "Минимум 20 букв")
+    .matches(/^[a-zA-Zа-яА-Я\s]*$/, "Только буквы"),
 });
 
 const LABELS = [
@@ -51,11 +56,15 @@ const Form = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     mode: "onChange",
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: any) => {
+    console.log(data);
+    reset();
+  };
 
   return (
     <div className={s.container}>
@@ -104,8 +113,13 @@ const Form = () => {
         <div className={s.area}>
           <label htmlFor="text" className={s.label}>
             Текст сообщения
+            <textarea
+              id="text"
+              {...register("text")}
+              className={cn(s.input, s.textarea)}
+            ></textarea>
+            <p>{errors.text?.message}</p>
           </label>
-          <textarea id="text" className={cn(s.input, s.textarea)}></textarea>
         </div>
         <div className={s.send}>
           <div className={s.checkbox}>
@@ -121,7 +135,7 @@ const Form = () => {
               </a>
             </p>
           </div>
-          <input type="submit" value="Отправить" />
+          <input className={s.btn} type="submit" value="Отправить" />
         </div>
       </form>
     </div>

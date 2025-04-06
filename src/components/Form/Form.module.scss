@@ -17,6 +17,9 @@
   font-weight: 400;
   font-size: 14px;
   color: #101d23;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .input {
@@ -48,6 +51,7 @@
   resize: none;
   width: 800px;
   height: 100px;
+  padding: 5px;
 }
 
 .send {
@@ -79,4 +83,18 @@
 
 .line:hover {
   color: #e93d07;
+}
+
+.btn {
+  border: 1px solid #e93d07;
+  border-radius: 20px;
+  padding: 10px 30px;
+  color: #fff;
+  background-color: #e93d07;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #e93d07;
+  cursor: pointer;
 }
