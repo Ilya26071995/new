@@ -6,19 +6,10 @@ interface ContactsType {
   img?: string;
   alt?: string;
   // TODO: Сделать массивом строк
-  text1: string;
-  text2?: string;
-  text3?: string;
+  texts: string[];
 }
 
-const Contacts = ({
-  miniTitle,
-  img,
-  alt,
-  text1,
-  text2,
-  text3,
-}: ContactsType) => {
+const Contacts = ({ miniTitle, img, alt, texts }: ContactsType) => {
   return (
     <div className={s.container}>
       <div className={s.titleIMG}>
@@ -26,9 +17,9 @@ const Contacts = ({
         <img src={img} alt={alt}></img>
       </div>
       <div className={s.flex}>
-        <span className={s.text}>{text1}</span>
-        <span className={s.text}>{text2}</span>
-        <span className={s.text}>{text3}</span>
+        {texts.map((text) => {
+          return <span className={s.text}>{text}</span>;
+        })}
       </div>
     </div>
   );

@@ -24,3 +24,8 @@
   text-align: right;
   gap: 10px;
 }
+
+.container:last-child .text:last-child {
+  color: #e93d07;
+  width: 300px;
+}

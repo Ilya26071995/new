@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import s from "./Options.module.scss";
 import { Btn } from "../Button/index";
-import cn from "classnames";
 import { Filter } from "../Filter";
 
 const OPTIONSARRAY = [
-  { text: "Административные  помещения" },
-  { text: "Спортивные объекты" },
-  { text: "Общепит" },
-  { text: "Образовательные учреждения" },
-  { text: "Офисные помещения" },
-  { text: "Производство" },
-  { text: "Склады и терминалы" },
-  { text: "Автозаправки и НПЗ" },
-  { text: "Торговые центры" },
-  { text: "Детские заведения" },
-  { text: "Аквапарки" },
-  { text: "Входные группы" },
-  { text: "Пути эвакуации" },
-  { text: "ЖД и автовокзалы" },
-  { text: "Аэро- и речпорты" },
-  { text: "Медицинские учреждения" },
+  { text: "Административные  помещения", value: "admin" },
+  { text: "Спортивные объекты", value: "sport" },
+  { text: "Общепит", value: "cafe" },
+  { text: "Образовательные учреждения", value: "school" },
+  { text: "Офисные помещения", value: "offis" },
+  { text: "Производство", value: "production" },
+  { text: "Склады и терминалы", value: "warehouse" },
+  { text: "Автозаправки и НПЗ", value: "gas" },
+  { text: "Торговые центры", value: "mall" },
+  { text: "Детские заведения", value: "children" },
+  { text: "Аквапарки", value: "water" },
+  { text: "Входные группы", value: "enter" },
+  { text: "Пути эвакуации", value: "evacuation" },
+  { text: "ЖД и автовокзалы", value: "bus" },
+  { text: "Аэро- и речпорты", value: "airport" },
+  { text: "Медицинские учреждения", value: "medical" },
 ];
 
 interface OptionsArrayType {
   text: string;
+  value: string;
 }
 
 const GOODS = [
@@ -73,8 +73,8 @@ const Options = () => {
         <div className={s.zone}>
           <h2 className={s.title}>Функциональная зона</h2>
           <ul className={s.list}>
-            {OPTIONSARRAY.map(({ text }: OptionsArrayType, index) => (
-              <li key={index} className={s.option}>
+            {OPTIONSARRAY.map(({ text, value }: OptionsArrayType, index) => (
+              <li key={index} className={s.option} value={value}>
                 {text}
               </li>
             ))}
