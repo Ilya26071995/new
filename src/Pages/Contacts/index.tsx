@@ -20,7 +20,7 @@ const Contacts = () => {
     <div>
       <Connection />
       <Navigation />
-      <BigTitle text="Контакты" />
+      <BigTitle text="Контакты" img="../img/imgCork.png" alt="картинка" />
       <Picture src="./img/ContactIMG.png" alt="picture" />
       <div className={s.flex}>
         {Comm.map(({ title }: CommType, index) => (

@@ -3,9 +3,11 @@ import s from "./BigTitle.module.scss";
 
 interface TitleType {
   text: string;
+  img?: string;
+  alt?: string;
 }
 
-const BigTitle = ({ text }: TitleType) => {
+const BigTitle = ({ text, img, alt }: TitleType) => {
   return (
     <div className={s.container}>
       <div className={s.title}>
@@ -13,7 +15,7 @@ const BigTitle = ({ text }: TitleType) => {
         <h1 className={s.bigText}>{text}</h1>
       </div>
       <div className={s.img}>
-        <img src="../img/imgCork.png" alt="картинка" />
+        <img src={img} alt={alt} />
       </div>
     </div>
   );

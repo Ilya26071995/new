@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./Options.module.scss";
 import { Btn } from "../Button/index";
 import { Filter } from "../Filter";
+import { Link } from "react-router-dom";
 
 const OPTIONSARRAY = [
   { text: "Административные  помещения", value: "admin" },
@@ -85,19 +86,21 @@ const Options = () => {
       <div className={s.bigContainer}>
         <ul className={s.goods}>
           {GOODS.map(({ img, title }: GoodsType, index) => (
-            <li className={s.good} key={index}>
-              <img src={img} />
-              <h3 className={s.titleMini}>{title}</h3>
-              <div className={s.subscribes}>
-                {SUBSCRIBES.map(
-                  ({ subscribe, style }: SubscribesType, index) => (
-                    <span className={s[style]} key={index}>
-                      {subscribe}
-                    </span>
-                  )
-                )}
-              </div>
-            </li>
+            <Link to={"/econom"}>
+              <li className={s.good} key={index}>
+                <img src={img} />
+                <h3 className={s.titleMini}>{title}</h3>
+                <div className={s.subscribes}>
+                  {SUBSCRIBES.map(
+                    ({ subscribe, style }: SubscribesType, index) => (
+                      <span className={s[style]} key={index}>
+                        {subscribe}
+                      </span>
+                    )
+                  )}
+                </div>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

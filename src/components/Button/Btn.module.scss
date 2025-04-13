@@ -14,18 +14,19 @@
 }
 
 .send {
-  background-color: #e93d07;
-  color: white;
+  background-color: #fff;
+  color: #e93d07;
   border: 1px solid #e93d07;
   border-radius: 20px;
   padding: 7px 15px;
   width: 150px;
   margin: 0 auto;
+  width: 200px;
 }
 
 .send:hover {
-  border: 1px solid #e93d07;
-  background-color: #fff;
-  color: #e93d07;
+  border: 1px solid #fff;
+  background-color: #e93d07;
+  color: #fff;
   cursor: pointer;
 }

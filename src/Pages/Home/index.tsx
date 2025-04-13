@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <Connection />
       <Navigation />
-      <BigTitle text="Каталог" />
+      <BigTitle text="Каталог" img="../img/imgCork.png" alt="картинка" />
       <Options />
       <Info />
       <Subscription />
