@@ -86,8 +86,8 @@ const Options = () => {
       <div className={s.bigContainer}>
         <ul className={s.goods}>
           {GOODS.map(({ img, title }: GoodsType, index) => (
-            <Link to={"/econom"}>
-              <li className={s.good} key={index}>
+            <Link to={"/econom"} key={index}>
+              <li className={s.good}>
                 <img src={img} />
                 <h3 className={s.titleMini}>{title}</h3>
                 <div className={s.subscribes}>

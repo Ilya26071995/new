@@ -6,6 +6,8 @@ import { BigTitle } from "../../components/BigTitle";
 import { CardInfo } from "../../components/CardInfo";
 import { Property } from "../../components/Property";
 import { Attribute } from "../../components/Attribute";
+import { Footer } from "../../components/Footer";
+import { Projects } from "../../components/Projects";
 
 const Econom = () => {
   return (
@@ -27,6 +29,8 @@ const Econom = () => {
   промышленного и гражданского строительства."
       />
       <Attribute />
+      <Projects />
+      <Footer />
     </div>
   );
 };
