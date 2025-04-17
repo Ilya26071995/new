@@ -40,11 +40,13 @@ const Calculation = () => {
   };
 
   return (
-    <div>
-      <h2>Задайте характеристики</h2>
+    <div className={s.container}>
+      <h2 className={s.title}>Расчет материалов</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
+        <h2 className={s.miniTitle}>Задайте характеристики</h2>
         <label className={s.label}>
-          Материал основания плиты
+          Материал основания
+          <br /> плиты
           <select {...register("material")} className={s.select}>
             <option className={s.option} hidden>
               Выбрать материал
@@ -59,7 +61,8 @@ const Calculation = () => {
           </select>
         </label>
         <label className={s.label}>
-          Размер плиты Ш х В х Г, мм
+          Размер плиты
+          <br /> Ш х В х Г, мм
           <select className={s.select} {...register("size")}>
             <option className={s.option} hidden>
               Выбрать размер
@@ -74,7 +77,8 @@ const Calculation = () => {
           </select>
         </label>
         <label className={s.label}>
-          Сколько панелей вы купили?
+          Сколько панелей
+          <br /> вы купили?
           <input
             {...register("quantity")}
             type="number"
@@ -84,10 +88,11 @@ const Calculation = () => {
           <p>{errors.quantity?.message}</p>
         </label>
         <label className={s.label}>
-          Сколько квадратных метров вы купили?
+          Сколько квадратных
+          <br /> метров вы купили?
           <input className={s.input} type="number" {...register("meters")} />
         </label>
-        <input type="submit" value="Отправить" />
+        <input className={s.btn} type="submit" value="Расчищать" />
       </form>
     </div>
   );
