@@ -53,12 +53,15 @@
   gap: 15px;
 }
 
+.bigFlex:hover {
+  cursor: pointer;
+}
+
 .bigFlex:hover .miniText {
   color: #e93d07;
 }
 .bigFlex:hover .arrow {
   border: 1px solid #e93d07;
-  cursor: pointer;
 }
 
 .miniTitle {

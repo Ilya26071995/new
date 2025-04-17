@@ -8,6 +8,8 @@ import { Property } from "../../components/Property";
 import { Attribute } from "../../components/Attribute";
 import { Footer } from "../../components/Footer";
 import { Projects } from "../../components/Projects";
+import { Banner } from "../../components/Banner";
+import { Calculation } from "../../components/Calculation";
 
 const Econom = () => {
   return (
@@ -29,7 +31,9 @@ const Econom = () => {
   промышленного и гражданского строительства."
       />
       <Attribute />
+      <Calculation />
       <Projects />
+      <Banner />
       <Footer />
     </div>
   );
