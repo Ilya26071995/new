@@ -1,67 +1,9 @@
 .container {
   padding: 0px 50px;
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  font-family: "Montserrat", sans-serif;
-  gap: 20px;
-  padding: 50px;
-  background-color: #f3f6f8;
-}
-
-.label {
+.formContainer {
   display: flex;
   justify-content: space-between;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 135%;
-  color: #101d23;
-}
-
-.input {
-  width: 193px;
-  height: 30px;
-  justify-content: space-between;
-  margin-left: auto;
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #8e8f9b;
-  border-radius: 20px;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.select {
-  height: 30px;
-  width: 200px;
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #8e8f9b;
-  border-radius: 20px;
-}
-
-.btn {
-  width: 202px;
-  border: 1px solid #e93d07;
-  border-radius: 20px;
-  background-color: #e93d07;
-  color: #fff;
-  padding: 5px 0;
 }
 
 .title {
@@ -71,8 +13,58 @@ input[type="number"]::-webkit-outer-spin-button {
   color: #101d23;
 }
 
-.miniTitle {
-  margin: 0;
+.miniFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  margin: 5px 0;
+  color: #e93d07;
+  text-align: center;
+}
+
+.answer {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.miniInput {
+  width: 50px;
+  height: 30px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #8e8f9b;
+  border-radius: 20px;
+}
+
+.miniLabel {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 135%;
+  color: #101d23;
+  width: 260px;
+}
+
+.info {
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 14px;
+  letter-spacing: 0.04em;
+  color: #101d23;
+  margin: 0;
+  margin-top: auto;
+}
+
+.formHead {
+  display: flex;
+  justify-content: space-between;
 }
