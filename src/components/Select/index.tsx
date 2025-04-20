@@ -20,13 +20,6 @@ const Select = ({ hidden, subscribes }: propsType) => {
         );
       })}
     </select>
-
-    // <select className={s.select}>
-    //   <option hidden>Выбрать материал</option>
-    //   {MATERIAL.map(({ variant }: propsType) => {
-    //     return <option className={s.option}>{variant}</option>;
-    //   })}
-    // </select>
   );
 };
 
