@@ -1,3 +1,4 @@
+// TODO: Нужно удалять неиспользуемые импорты, это касается всех мест
 import React, { useState } from "react";
 import s from "./Subscription.module.scss";
 
@@ -20,6 +21,7 @@ const Subscription = () => {
   return (
     <div className={s.container}>
       <ul className={s.list}>
+        {/* TODO: Не нужно дополнительно прописывать для деструктуризации типизацию, ты можешь либо типизировать сам MOCK, либо ТС будет сам это делать */}
         {TITLES.map(({ title }: TitleType, index) => (
           <li className={s.option} key={index}>
             {title}

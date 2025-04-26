@@ -5,7 +5,6 @@ interface ContactsType {
   miniTitle: string;
   img?: string;
   alt?: string;
-  // TODO: Сделать массивом строк
   texts: string[];
 }
 
@@ -18,6 +17,7 @@ const Contacts = ({ miniTitle, img, alt, texts }: ContactsType) => {
       </div>
       <div className={s.flex}>
         {texts.map((text) => {
+          // TODO: в любом map нужно прописывать key, чтобы реакт понимал, что происходит
           return <span className={s.text}>{text}</span>;
         })}
       </div>

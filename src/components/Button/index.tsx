@@ -6,6 +6,8 @@ interface BtnType {
   style: string;
 }
 
+// TODO: Компонент должен называться так же, как ты назвал папку
+
 const Btn = ({ children, style }: BtnType) => {
   return <button className={s[style]}>{children}</button>;
 };

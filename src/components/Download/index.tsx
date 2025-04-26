@@ -28,6 +28,7 @@ const Download = () => {
     <div className={s.container}>
       <div className={s.title}>
         <h2 className={s.head}>
+          {/* TODO: Лучше сократить использование <br />, вместо этого используй ширину */}
           Посмотрите презентации
           <br /> о наших продуктах
         </h2>
