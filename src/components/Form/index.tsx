@@ -34,23 +34,6 @@ const schema = yup.object({
     .matches(/^[a-zA-Zа-яА-Я\s]*$/, "Только буквы"),
 });
 
-const LABELS = [
-  { title: "Ваше имя", id: "name", type: "text" },
-  {
-    title: "Название организации",
-    id: "organization",
-    type: "text",
-  },
-  { title: "Телефон", id: "phone", type: "string" },
-  { title: "E-mail", id: "mail", type: "text" },
-];
-
-interface LabelsType {
-  title: string;
-  id: string;
-  type: string;
-}
-
 const Form = () => {
   const {
     register,

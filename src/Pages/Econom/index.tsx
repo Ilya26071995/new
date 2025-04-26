@@ -4,7 +4,6 @@ import { Connection } from "../../components/Connection/Index";
 import { Navigation } from "../../components/Navigation";
 import { BigTitle } from "../../components/BigTitle";
 import { CardInfo } from "../../components/CardInfo";
-import { Property } from "../../components/Property";
 import { Attribute } from "../../components/Attribute";
 import { Footer } from "../../components/Footer";
 import { Projects } from "../../components/Projects";
@@ -33,7 +32,7 @@ const Econom = () => {
       <Attribute />
       <Calculation />
       <Projects />
-      <Banner />
+      <Banner title="Баннер для акции или распродажи товаров" />
       <Footer />
     </div>
   );

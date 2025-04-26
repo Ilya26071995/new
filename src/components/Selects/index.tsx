@@ -1,12 +1,7 @@
 import React from "react";
 import s from "./Selects.module.scss";
-import { Btn } from "../Button";
+import { Button } from "../Button";
 import { Select } from "../Select";
-import { Filter } from "../Filter";
-
-interface propsType {
-  variant: string;
-}
 
 const SIZE = ["Размер 1", "Размер 2", "Размер 3", "Размер 4"];
 
@@ -33,7 +28,7 @@ const Selects = () => {
           return <Select key={index} hidden={title} subscribes={mip} />;
         })}
       </form>
-      <Btn style="send">ОСТАВИТЬ ЗАЯВКУ</Btn>
+      <Button style="send">ОСТАВИТЬ ЗАЯВКУ</Button>
     </div>
   );
 };

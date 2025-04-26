@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./Subscription.module.scss";
 
 const TITLES = [
@@ -12,15 +12,11 @@ const TITLES = [
   { title: "Утилизация панелей" },
 ];
 
-interface TitleType {
-  title: string;
-}
-
 const Subscription = () => {
   return (
     <div className={s.container}>
       <ul className={s.list}>
-        {TITLES.map(({ title }: TitleType, index) => (
+        {TITLES.map(({ title }, index) => (
           <li className={s.option} key={index}>
             {title}
           </li>

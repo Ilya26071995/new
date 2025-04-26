@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./Btn.module.scss";
 
 interface BtnType {
@@ -6,8 +6,8 @@ interface BtnType {
   style: string;
 }
 
-const Btn = ({ children, style }: BtnType) => {
+const Button = ({ children, style }: BtnType) => {
   return <button className={s[style]}>{children}</button>;
 };
 
-export { Btn };
+export { Button };

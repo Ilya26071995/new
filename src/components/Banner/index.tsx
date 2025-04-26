@@ -1,13 +1,17 @@
 import React from "react";
 import s from "./Banner.module.scss";
-import { Btn } from "../Button";
+import { Button } from "../Button";
 
-const Banner = () => {
+interface PropsType {
+  title: string;
+}
+
+const Banner = ({ title }: PropsType) => {
   return (
     <div className={s.container}>
-      <h2 className={s.title}>Баннер для акции или распродажи товаров</h2>
+      <h2 className={s.title}>{title}</h2>
       <div className={s.btn}>
-        <Btn style="btn">подробнее</Btn>
+        <Button style="btn">подробнее</Button>
       </div>
       <img src="./img/warning.svg" alt="warning" />
     </div>

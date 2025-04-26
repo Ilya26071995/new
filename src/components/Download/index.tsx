@@ -27,10 +27,7 @@ const Download = () => {
   return (
     <div className={s.container}>
       <div className={s.title}>
-        <h2 className={s.head}>
-          Посмотрите презентации
-          <br /> о наших продуктах
-        </h2>
+        <h2 className={s.head}>Посмотрите презентации о наших продуктах</h2>
       </div>
       <div className={s.files}>
         {FILES.map(({ img, alt, link, text }: FilesType, index) => (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import s from "./Options.module.scss";
-import { Btn } from "../Button/index";
+import { Button } from "../Button/index";
 import { Filter } from "../Filter";
 import { Link } from "react-router-dom";
 
@@ -65,8 +65,6 @@ interface SubscribesType {
   style: string;
 }
 
-const SELECTS = ["Материал 1", "Материал 2", "Материал 3", "Материал 4"];
-
 const Options = () => {
   return (
     <div className={s.big}>
@@ -104,7 +102,7 @@ const Options = () => {
           ))}
         </ul>
       </div>
-      <Btn style="btn">показать еще</Btn>
+      <Button style="btn">показать еще</Button>
     </div>
   );
 };

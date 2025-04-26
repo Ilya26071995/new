@@ -1,9 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./Calculation.module.scss";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Check } from "../Check";
 import { LeftForm } from "../LeftForm";
 import { RightForm } from "../RightForm";
 
