@@ -5,7 +5,6 @@ interface ContactsType {
   miniTitle: string;
   img?: string;
   alt?: string;
-  // TODO: Сделать массивом строк
   texts: string[];
 }
 

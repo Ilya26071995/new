@@ -5,6 +5,7 @@ import cn from "classnames";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+// TODO: Схему лучше выносить в отдельный файл
 const schema = yup.object({
   phone: yup
     .string()
