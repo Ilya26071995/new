@@ -47,7 +47,6 @@ const LeftForm = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
-    reset();
   };
 
   const [click, setClick] = useState(true);

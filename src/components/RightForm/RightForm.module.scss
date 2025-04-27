@@ -88,3 +88,12 @@ input[type="number"]::-webkit-outer-spin-button {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.miniHead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head {
+  margin: 10px 0 0 0;
+}

@@ -110,17 +110,15 @@ const RightForm = () => {
           <p className={s.error}>{errors.quantity?.message}</p>
         </div>
       </label>
-      <label className={s.label}>
-        Сколько квадратных
-        <br /> метров вы купили?
-        <input className={s.input} type="number" {...register("meters")} />
-      </label>
-      <input
-        className={s.btn}
-        type="submit"
-        value="Рассчитать"
-        onClick={clickFun}
-      />
+      <div className={s.miniHead}>
+        <input
+          className={s.btn}
+          type="submit"
+          value="Рассчитать"
+          onClick={clickFun}
+        />
+        <h3 className={s.head}>Детальная информация:</h3>
+      </div>
       {click ? (
         <div className={s.flex}>
           {BIGCHECK.map(({ title, text }: PropsType, index) => {
