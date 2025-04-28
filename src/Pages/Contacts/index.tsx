@@ -8,6 +8,7 @@ import { Communication } from "../../components/Communication";
 import { Footer } from "../../components/Footer";
 import { Delivery } from "../../components/Delivery";
 import { Form } from "../../components/Form";
+import { Helmet } from "react-helmet";
 
 const Comm = [{ title: "Офис" }, { title: "Склад" }];
 
@@ -18,6 +19,10 @@ interface CommType {
 const Contacts = () => {
   return (
     <div>
+      <Helmet>
+        <title>Contacts</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
       <Connection />
       <Navigation />
       <BigTitle text="Контакты" img="../img/imgCork.png" alt="картинка" />

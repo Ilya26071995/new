@@ -16,6 +16,7 @@ a {
   color: white;
   border-radius: 20px;
   padding: 2px 10px;
+  transition: 0.3s;
 }
 
 .connect {
@@ -42,4 +43,5 @@ a {
 .phone:hover,
 .mail:hover {
   color: #e93d07;
+  transition: 0.3s;
 }

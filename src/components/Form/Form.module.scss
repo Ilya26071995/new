@@ -82,6 +82,7 @@
 
 .line:hover {
   color: #e93d07;
+  transition: 0.3s;
 }
 
 .btn {
@@ -96,6 +97,7 @@
   background-color: #fff;
   color: #e93d07;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .false {
@@ -109,4 +111,5 @@
   color: #35353b;
   border: 1px solid #35353b;
   cursor: not-allowed;
+  transition: 0.3s;
 }

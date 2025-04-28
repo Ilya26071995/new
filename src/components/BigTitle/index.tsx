@@ -7,6 +7,12 @@ interface TitleType {
   alt?: string;
 }
 
+const options = [
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "vanilla", label: "Vanilla" },
+];
+
 const BigTitle = ({ text, img, alt }: TitleType) => {
   return (
     <div className={s.container}>

@@ -20,7 +20,9 @@ const Navigation = () => {
   return (
     <div className={s.container}>
       <div>
-        <img src="./img/headerLogo.jpg" alt="logo" />
+        <Link to="/">
+          <img src="./img/Logo1.svg" alt="logo" />
+        </Link>
       </div>
       <div className={s.mini}>
         <ul className={s.list}>

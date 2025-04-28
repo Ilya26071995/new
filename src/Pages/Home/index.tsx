@@ -7,10 +7,15 @@ import { Info } from "../../components/Info";
 import { Navigation } from "../../components/Navigation";
 import { Options } from "../../components/Options";
 import { Subscription } from "../../components/Subscription";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Home</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
       <Connection />
       <Navigation />
       <BigTitle text="Каталог" img="../img/imgCork.png" alt="картинка" />

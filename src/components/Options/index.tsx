@@ -29,28 +29,62 @@ interface OptionsArrayType {
 }
 
 const GOODS = [
-  { img: "../img/imgCork.png", title: "Панели — Эконом Pixel" },
-  { img: "../img/imgCork.png", title: "Панели окрашенные — Econom" },
-  { img: "../img/imgCork.png", title: "Панели — Econom Loft" },
-  { img: "../img/imgCork.png", title: "Панели HPL пластик — Practic" },
+  { img: "../img/imgCork.png", title: "Панели — Эконом Pixel", type: "bus" },
+  {
+    img: "../img/imgCork.png",
+    title: "Панели окрашенные — Econom",
+    type: "evacuation",
+  },
+  { img: "../img/imgCork.png", title: "Панели — Econom Loft", type: "cafe" },
+  {
+    img: "../img/imgCork.png",
+    title: "Панели HPL пластик — Practic",
+    type: "water",
+  },
 
-  { img: "../img/imgCork.png", title: "Панели с натуральным шпоном — Elite" },
-  { img: "../img/imgCork.png", title: "Панели с ПВХ пленкой — InTerior" },
-  { img: "../img/imgCork.png", title: "Декоративный профиль для панелей" },
-  { img: "../img/imgCork.png", title: "Отбойная доска — Design" },
+  {
+    img: "../img/imgCork.png",
+    title: "Панели с натуральным шпоном — Elite",
+    type: "sport",
+  },
+  {
+    img: "../img/imgCork.png",
+    title: "Панели с ПВХ пленкой — InTerior",
+    type: "medical",
+  },
+  {
+    img: "../img/imgCork.png",
+    title: "Декоративный профиль для панелей",
+    type: "airport",
+  },
+  {
+    img: "../img/imgCork.png",
+    title: "Отбойная доска — Design",
+    type: "enter",
+  },
 
-  { img: "../img/imgCork.png", title: "Потолочные панели —INTERPAN Mercury" },
+  {
+    img: "../img/imgCork.png",
+    title: "Потолочные панели —INTERPAN Mercury",
+    type: "children",
+  },
   {
     img: "../img/imgCork.png",
     title: "Фасадные и цокольные панели — ExTerior",
+    type: "mall",
   },
-  { img: "../img/imgCork.png", title: "Панели антибактериальные — Farma " },
-  { img: "../img/imgCork.png", title: "Плита без покрытия" },
+  {
+    img: "../img/imgCork.png",
+    title: "Панели антибактериальные — Farma ",
+    type: "gas",
+  },
+  { img: "../img/imgCork.png", title: "Плита без покрытия", type: "warehouse" },
 ];
 
 interface GoodsType {
   img: string;
   title: string;
+  type: string;
 }
 
 const SUBSCRIBES = [
@@ -79,7 +113,7 @@ const Options = () => {
             ))}
           </ul>
         </div>
-        <Filter filterTitle="Выбрать материал" />
+        <Filter />
       </div>
       <div className={s.bigContainer}>
         <ul className={s.goods}>

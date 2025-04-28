@@ -4,7 +4,7 @@ import { SocialIcon } from "../SocialIcon/index";
 
 const CONNECTION = [
   {
-    link: "https://mail.ru/",
+    link: "mailto:https://mail.ru/",
     vid: "mail",
     text: "info@interpan.ru",
     img: "../img/mail.svg",

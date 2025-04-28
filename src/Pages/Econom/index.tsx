@@ -9,10 +9,15 @@ import { Footer } from "../../components/Footer";
 import { Projects } from "../../components/Projects";
 import { Banner } from "../../components/Banner";
 import { Calculation } from "../../components/Calculation";
+import { Helmet } from "react-helmet";
 
 const Econom = () => {
   return (
     <div>
+      <Helmet>
+        <title>Econom</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
       <Connection />
       <Navigation />
       <BigTitle text="Interpan Econom" />

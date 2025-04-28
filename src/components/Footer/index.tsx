@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Footer.module.scss";
 import { SocialIcon } from "../SocialIcon/index";
+import { Link } from "react-router-dom";
 
 const NAVS = [
   { href: "https//www.cd.ru", text: "Главная" },
@@ -18,7 +19,7 @@ interface NavsType {
 
 const CONNECTIONS = [
   {
-    link: "https://mail.ru/",
+    link: "mailto:https://mail.ru/",
     vid: "mail",
     text: "info@interpan.ru",
     img: "../img/mail.svg",
@@ -41,7 +42,10 @@ const Footer = () => {
   return (
     <div className={s.container}>
       <div className={s.logo}>
-        <img src="../img/headerLogo.jpg" alt="logo" />
+        <Link to="/">
+          <img src="../img/Logo1.svg" alt="logo" />
+        </Link>
+
         <p className={s.text}>
           SEO текст для продвижения сайта в поисковиках содержащий ключевые
           слова, теги или другую информацию, которая может быть неинтересна

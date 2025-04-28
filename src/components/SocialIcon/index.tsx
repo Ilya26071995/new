@@ -25,7 +25,7 @@ const SocialIcon = () => {
   return (
     <div className={s.soc}>
       {SOCIALICONS.map(({ link, img, text }: SocialIconsType, index) => (
-        <a href={link} key={index}>
+        <a href={link} key={index} target="_blank">
           <img src={img} alt={text} />
         </a>
       ))}
