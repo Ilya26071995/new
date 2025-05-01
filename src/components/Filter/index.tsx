@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import s from "./Filter.module.scss";
-import cn from "classnames";
 import Select from "react-select";
 
 const SELECTS = ["Материал 1", "Материал 2", "Материал 3", "Материал 4"];
@@ -12,8 +11,36 @@ const OPTIONS = [
   { value: "Материал 4", label: "Материал 4" },
 ];
 
+const customStyles = {
+  option: (provided: any, state: any) => ({
+    ...provided,
+    fontSize: 14,
+    color: state.isFocused ? "white" : "#8E8F9B",
+    backgroundColor: state.isFocused ? "#E93D07" : "white",
+    textAlign: "center",
+    borderRadius: 20,
+    cursor: state.isFocused ? "pointer" : "",
+  }),
+  container: (provided: any, state: any) => ({
+    ...provided,
+    width: 220,
+    padding: 0,
+    borderRadius: 20,
+    fontSize: 12,
+  }),
+  control: (provided: any, state: any) => ({
+    ...provided,
+    borderRadius: 20,
+    textAlign: "center",
+  }),
+  menu: (provided: any, state: any) => ({
+    ...provided,
+    borderRadius: 20,
+  }),
+};
+
 const Filter = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [DEFAULT, setDefault] = useState(null);
 
   return (
     <div className={s.filter}>
@@ -22,28 +49,10 @@ const Filter = () => {
         <img src="../img/filterIcon.svg" alt="filter" />
       </div>
       <Select
-        styles={{
-          control: (baseStyles, state) => ({
-            ...baseStyles,
-            borderRadius: "20px",
-          }),
-          option: (base) => ({
-            ...base,
-            backgroundColor: "white",
-            color: "#8e8f9b",
-          }),
-          container: () => ({
-            width: "180px",
-            border: "2px solid gray",
-            borderRadius: "20px",
-          }),
-          menu: () => ({
-            width: "180px",
-            border: "none",
-          }),
-        }}
-        defaultValue={selectedOption}
+        defaultValue={DEFAULT}
         options={OPTIONS}
+        styles={customStyles}
+        placeholder="ВЫБРАТЬ МАТЕРИАЛ"
       />
       {/* <form className={s.form}>
         <label htmlFor="material"></label>
