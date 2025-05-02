@@ -24,7 +24,7 @@
   padding: 0;
 }
 
-.option {
+.opt {
   padding: 5px 15px;
   background-color: #f3f6f8;
   font-weight: 600;
@@ -36,11 +36,16 @@
   border-radius: 2px;
 }
 
-.option:hover {
+.opt:hover {
   background-color: #e93d07;
   color: white;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.opt:focus {
+  background-color: #e93d07;
+  color: white;
 }
 
 .bigContainer {

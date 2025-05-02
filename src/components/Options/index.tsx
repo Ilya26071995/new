@@ -3,6 +3,7 @@ import s from "./Options.module.scss";
 import { Button } from "../Button/index";
 import { Filter } from "../Filter";
 import { Link } from "react-router-dom";
+import cn from "classnames";
 
 const OPTIONSARRAY = [
   { text: "Административные  помещения", value: "admin" },
@@ -100,6 +101,22 @@ interface SubscribesType {
 }
 
 const Options = () => {
+  const [category, setCategory] = useState("");
+
+  const filterGoods = GOODS.filter((e) => e.type.includes(category));
+
+  const handleCategory = (changeCategory: string) => {
+    if (changeCategory === category) {
+      setCategory("");
+    } else {
+      setCategory(changeCategory);
+    }
+  };
+
+  const clickHandler = (event: any) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={s.big}>
       <div className={s.container}>
@@ -107,8 +124,19 @@ const Options = () => {
           <h2 className={s.title}>Функциональная зона</h2>
           <ul className={s.list}>
             {OPTIONSARRAY.map(({ text, value }: OptionsArrayType, index) => (
-              <li key={index} className={s.option} value={value}>
-                {text}
+              <li
+                key={index}
+                className={s.option}
+                value={value}
+                onClick={() => handleCategory(value)}
+              >
+                <a
+                  className={s.opt}
+                  href="#"
+                  onClick={(event) => clickHandler(event)}
+                >
+                  {text}
+                </a>
               </li>
             ))}
           </ul>
@@ -117,7 +145,7 @@ const Options = () => {
       </div>
       <div className={s.bigContainer}>
         <ul className={s.goods}>
-          {GOODS.map(({ img, title }: GoodsType, index) => (
+          {filterGoods.map(({ img, title }: GoodsType, index) => (
             <Link to={"/econom"} key={index}>
               <li className={s.good}>
                 <img src={img} />
