@@ -74,7 +74,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #fff;
   color: #e93d07;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .error {

@@ -16,7 +16,7 @@ const Econom = () => {
     <div>
       <Helmet>
         <title>Econom</title>
-        <meta name="description" content="Helmet application" />
+        <meta name="Econom" content="Эконом" />
       </Helmet>
       <Connection />
       <Navigation />

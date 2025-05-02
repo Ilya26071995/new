@@ -82,7 +82,7 @@
 
 .line:hover {
   color: #e93d07;
-  transition: 0.3s;
+  transition: color 0.3s ease-in-out;
 }
 
 .btn {
@@ -97,7 +97,7 @@
   background-color: #fff;
   color: #e93d07;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .false {
@@ -111,5 +111,5 @@
   color: #35353b;
   border: 1px solid #35353b;
   cursor: not-allowed;
-  transition: 0.3s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, useLocation } from "react-router-dom";
 import { Home } from "./Pages/Home";
 import { Contacts } from "./Pages/Contacts";
@@ -7,7 +7,7 @@ import { Econom } from "./Pages/Econom";
 function ScrollToTop() {
   const { pathname } = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 

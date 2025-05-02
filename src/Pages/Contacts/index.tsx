@@ -21,7 +21,7 @@ const Contacts = () => {
     <div>
       <Helmet>
         <title>Contacts</title>
-        <meta name="description" content="Helmet application" />
+        <meta name="Contacts" content="Контакты" />
       </Helmet>
       <Connection />
       <Navigation />

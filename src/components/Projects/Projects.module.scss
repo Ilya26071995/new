@@ -55,16 +55,15 @@
 
 .bigFlex:hover {
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .bigFlex:hover .miniText {
   color: #e93d07;
-  transition: 0.3s;
+  transition: color 0.3s ease-in-out;
 }
 .bigFlex:hover .arrow {
   border: 1px solid #e93d07;
-  transition: 0.3s;
+  transition: border 0.3s ease-in-out;
 }
 
 .miniTitle {

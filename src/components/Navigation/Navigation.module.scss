@@ -17,7 +17,7 @@
 
 .link:hover {
   color: #e93d07;
-  transition: 0.3s;
+  transition: color 0.3s ease-in-out;
 }
 .mini {
   display: flex;
@@ -29,7 +29,7 @@
   cursor: pointer;
   border: 1px solid gray;
   border-radius: 20px;
-  transition: 0.3s;
+  transition: border 0.3s ease-in-out;
 }
 
 .lupa {
