@@ -18,9 +18,12 @@ const Contacts = ({ miniTitle, img, alt, texts }: ContactsType) => {
       <div className={s.flex}>
         {texts.map((text, index) => {
           return (
-            <span className={s.text} key={index}>
+            // <span className={s.text} key={index}>
+            //   {text}
+            // </span>
+            <a href={`tel:${text}`} className={s.text} key={index}>
               {text}
-            </span>
+            </a>
           );
         })}
       </div>

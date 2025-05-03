@@ -59,9 +59,9 @@ const Communication = ({ title }: CommunicationType) => {
         {Cont.map(({ miniTitle, img, alt, texts }: ContType, index) => (
           <Contacts
             miniTitle={miniTitle}
+            texts={texts}
             img={img}
             alt={alt}
-            texts={texts}
             key={index}
           />
         ))}
