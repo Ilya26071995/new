@@ -47,11 +47,11 @@
   font-size: 14px;
   color: #101d23;
   padding: 0;
+  transition: color 0.3s ease-in-out;
 }
 
 .link:hover {
   color: #e93d07;
-  transition: color 0.3s ease-in-out;
 }
 
 .smallText {

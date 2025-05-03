@@ -7,12 +7,12 @@
   width: 150px;
   margin: 0 auto;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .btn:hover {
   background-color: black;
   border-color: black;
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .send {
@@ -24,6 +24,7 @@
   width: 150px;
   margin: 0 auto;
   width: 200px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .send:hover {
@@ -31,5 +32,4 @@
   background-color: #e93d07;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }

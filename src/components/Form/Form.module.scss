@@ -80,11 +80,11 @@
 
 .line {
   text-decoration: underline;
+  transition: color 0.3s ease-in-out;
 }
 
 .line:hover {
   color: #e93d07;
-  transition: color 0.3s ease-in-out;
 }
 
 .btn {
@@ -93,19 +93,20 @@
   padding: 10px 30px;
   color: #fff;
   background-color: #e93d07;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .btn:hover {
   background-color: #fff;
   color: #e93d07;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .false {
   background-color: #8e8f9b;
   color: #35353b;
   border: 1px solid #35353b;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .false:hover {
@@ -113,5 +114,4 @@
   color: #35353b;
   border: 1px solid #35353b;
   cursor: not-allowed;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }

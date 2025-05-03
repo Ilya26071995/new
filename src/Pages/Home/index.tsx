@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       <Helmet>
         <title>Home</title>
-        <meta name="Home" content="Начальная" />
+        <meta name="description" content="Главная страница сайта" />
       </Helmet>
       <Connection />
       <Navigation />

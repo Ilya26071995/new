@@ -59,11 +59,9 @@
 
 .bigFlex:hover .miniText {
   color: #e93d07;
-  transition: color 0.3s ease-in-out;
 }
 .bigFlex:hover .arrow {
   border: 1px solid #e93d07;
-  transition: border 0.3s ease-in-out;
 }
 
 .miniTitle {
@@ -80,9 +78,11 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 14px;
+  transition: color 0.3s ease-in-out;
 }
 
 .arrow {
   border: 1px solid #101d23;
   padding: 0 7px;
+  transition: border 0.3s ease-in-out;
 }

@@ -11,11 +11,11 @@
   font-weight: 500;
   font-size: 14px;
   color: #101d23;
+  transition: color 0.3s ease-in-out;
 }
 
 .text:hover {
   color: #e93d07;
-  transition: color 0.3s ease-in-out;
 }
 
 .miniTitle {

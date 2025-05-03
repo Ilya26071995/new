@@ -20,11 +20,11 @@
   padding: 10px 15px;
   text-align: center;
   align-items: center;
+  transition: color 0.3s ease-in-out;
 }
 .option:hover {
   color: #e93d07;
   cursor: pointer;
-  transition: color 0.3s ease-in-out;
 }
 
 .white {

@@ -68,13 +68,13 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 14px;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .btn:hover {
   background-color: #fff;
   color: #e93d07;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .error {
