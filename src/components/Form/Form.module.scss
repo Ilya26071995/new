@@ -25,6 +25,7 @@
   border-radius: 20px;
   border: 1px solid #e5e5e5;
   width: 220px;
+  margin-left: auto;
 }
 
 .flex {
@@ -49,8 +50,9 @@
 .textarea {
   resize: none;
   width: 800px;
-  height: 100px;
-  padding: 5px;
+  height: 120px;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .send {

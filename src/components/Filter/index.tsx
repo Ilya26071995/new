@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import s from "./Filter.module.scss";
 import Select from "react-select";
 
-const SELECTS = ["Материал 1", "Материал 2", "Материал 3", "Материал 4"];
-
 const OPTIONS = [
   { value: "Материал 1", label: "Материал 1" },
   { value: "Материал 2", label: "Материал 2" },

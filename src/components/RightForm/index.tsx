@@ -4,9 +4,48 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Check } from "../Check";
 import * as yup from "yup";
+import Select from "react-select";
 
-const MATERIALS = ["Материал 1", "Материал 2", "Материал 3", "Материал 4"];
-const SIZES = ["s", "m", "l", "xl"];
+const customStyles = {
+  option: (provided: any, state: any) => ({
+    ...provided,
+    fontSize: 14,
+    color: state.isFocused ? "white" : "#8E8F9B",
+    backgroundColor: state.isFocused ? "#E93D07" : "white",
+    textAlign: "center",
+    borderRadius: 20,
+    cursor: state.isFocused ? "pointer" : "",
+  }),
+  container: (provided: any, state: any) => ({
+    ...provided,
+    width: 200,
+    padding: 0,
+    borderRadius: 20,
+    fontSize: 12,
+  }),
+  control: (provided: any, state: any) => ({
+    ...provided,
+    borderRadius: 20,
+    textAlign: "center",
+  }),
+  menu: (provided: any, state: any) => ({
+    ...provided,
+    borderRadius: 20,
+  }),
+};
+
+const MATERIALS = [
+  { value: "Материал 1", label: "Материал 1" },
+  { value: "Материал 2", label: "Материал 2" },
+  { value: "Материал 3", label: "Материал 3" },
+  { value: "Материал 4", label: "Материал 4" },
+];
+const SIZES = [
+  { value: "Размер 1", label: "Размер 1" },
+  { value: "Размер 2", label: "Размер 2" },
+  { value: "Размер 3", label: "Размер 3" },
+  { value: "Размер 4", label: "Размер 4" },
+];
 const BIGCHECK = [
   { title: "Квадратных метров, м2", text: "—" },
   { title: "Количество панелей, шт ", text: "—" },
@@ -62,13 +101,21 @@ const RightForm = () => {
     setClick((prevclick) => !prevclick);
     console.log(click);
   };
+
+  const [DEFAULT, setDefault] = useState(null);
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
       <h2 className={s.miniTitle}>Задайте характеристики</h2>
       <label className={s.label}>
         Материал основания
         <br /> плиты
-        <select {...register("material")} className={s.select}>
+        <Select
+          options={MATERIALS}
+          defaultValue={DEFAULT}
+          styles={customStyles}
+          placeholder="ВЫБРАТЬ МАТЕРИАЛ"
+        />
+        {/* <select {...register("material")} className={s.select}>
           <option className={s.option} hidden>
             Выбрать материал
           </option>
@@ -79,12 +126,18 @@ const RightForm = () => {
               </option>
             );
           })}
-        </select>
+        </select> */}
       </label>
       <label className={s.label}>
         Размер плиты
         <br /> Ш х В х Г, мм
-        <select className={s.select} {...register("size")}>
+        <Select
+          options={SIZES}
+          defaultValue={DEFAULT}
+          styles={customStyles}
+          placeholder="ВЫБРАТЬ РАЗМЕР"
+        />
+        {/* <select className={s.select} {...register("size")}>
           <option className={s.option} hidden>
             Выбрать размер
           </option>
@@ -95,7 +148,7 @@ const RightForm = () => {
               </option>
             );
           })}
-        </select>
+        </select> */}
       </label>
       <label className={s.label}>
         Сколько панелей
