@@ -109,18 +109,6 @@ const LeftForm = () => {
           styles={customStyles}
           placeholder="ВЫБРАТЬ МАТЕРИАЛ"
         />
-        {/* <select {...register("material")} className={s.select}>
-          <option className={s.option} hidden>
-            Выбрать материал
-          </option>
-          {MATERIALS.map((material, index) => {
-            return (
-              <option className={s.option} key={index}>
-                {material}
-              </option>
-            );
-          })}
-        </select> */}
       </label>
       <label className={s.label}>
         Размер плиты
@@ -131,18 +119,6 @@ const LeftForm = () => {
           styles={customStyles}
           placeholder="ВЫБРАТЬ РАЗМЕР"
         />
-        {/* <select className={s.select} {...register("size")}>
-          <option className={s.option} hidden>
-            Выбрать размер
-          </option>
-          {SIZES.map((size, index) => {
-            return (
-              <option className={s.option} key={index}>
-                {size}
-              </option>
-            );
-          })}
-        </select> */}
       </label>
       <label className={s.label}>
         Сколько панелей
