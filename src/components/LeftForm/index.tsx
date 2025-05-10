@@ -92,10 +92,13 @@ const LeftForm = () => {
 
   const clickFun = () => {
     setClick((prevclick) => !prevclick);
-    console.log(click);
   };
 
-  const [DEFAULT, setDefault] = useState(null);
+  const [defaultValue, setDefaultValue] = useState(null);
+  const handleChange = (e: any) => {
+    setDefaultValue(e);
+    console.log(defaultValue);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
@@ -105,9 +108,10 @@ const LeftForm = () => {
         <br /> плиты
         <Select
           options={MATERIALS}
-          defaultValue={DEFAULT}
+          defaultValue={defaultValue}
           styles={customStyles}
           placeholder="ВЫБРАТЬ МАТЕРИАЛ"
+          onChange={handleChange}
         />
       </label>
       <label className={s.label}>
@@ -115,9 +119,10 @@ const LeftForm = () => {
         <br /> Ш х В х Г, мм
         <Select
           options={SIZES}
-          defaultValue={DEFAULT}
+          defaultValue={defaultValue}
           styles={customStyles}
           placeholder="ВЫБРАТЬ РАЗМЕР"
+          onChange={handleChange}
         />
       </label>
       <label className={s.label}>

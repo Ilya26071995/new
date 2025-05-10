@@ -3,7 +3,7 @@
   border: 1px solid #e5e5e5;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
   width: 40%;
 }
 
@@ -42,15 +42,6 @@
   transition: color 0.3s ease-in-out;
 }
 
-.flex:last-child,
-.flex:nth-last-child(2) {
-  pointer-events: none;
-}
-
-.flex:last-child a {
-  color: #e93d07;
-}
-
 .link:hover {
   color: #e93d07;
 }
@@ -64,7 +55,23 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.noLinks {
+.span {
+  font-weight: 500;
+  font-size: 12px;
+  color: #101d23;
+  font-family: "Montserrat", sans-serif;
+}
+
+.flex:last-child .span {
+  color: #e93d07;
+}
+
+.face {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.img {
+  width: 20px;
 }

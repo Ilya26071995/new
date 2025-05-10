@@ -1,50 +1,47 @@
 import React from "react";
 import s from "./Communication.module.scss";
 
+type ContType = {
+  name: string;
+  img?: string;
+  alt?: string;
+  texts: { title: string; link?: string }[];
+};
 interface TitleType {
   title: string;
-  cont: any;
-}
-
-interface ContType {
-  name: string;
-  img: string;
-  alt: string;
-  texts: any;
+  cont: ContType[];
 }
 
 const Communication = ({ title, cont }: TitleType) => {
   return (
     <div className={s.container}>
       <h2 className={s.title}>{title}</h2>
-      {cont.map(({ name, img, alt, texts }: ContType, index: React.Key) => {
+      {cont.map(({ name, img, alt, texts }, index) => {
         return (
           <div key={index} className={s.flex}>
-            <div>
+            <div className={s.face}>
               <h3 className={s.miniTitle}>{name}</h3>
-              <img src={img} alt={alt} />
+              <img className={s.img} src={img} alt={alt} />
             </div>
             <div className={s.links}>
-              {texts.map(
-                (
-                  text: {
-                    link: string | undefined;
-                    title: undefined;
-                  },
-                  index: React.Key
-                ) => {
+              {texts.map(({ title, link }, index) => {
+                if (link)
                   return (
                     <a
                       className={s.link}
-                      href={text.link}
+                      href={link}
                       key={index}
                       target="_blank"
                     >
-                      {text.title}
+                      {title}
                     </a>
                   );
-                }
-              )}
+                return (
+                  <span className={s.span} key={index}>
+                    {title}
+                  </span>
+                );
+              })}
             </div>
           </div>
         );

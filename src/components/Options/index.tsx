@@ -102,7 +102,7 @@ interface SubscribesType {
 
 const Options = () => {
   const [category, setCategory] = useState("");
-
+  //в стейте массив
   const filterGoods = GOODS.filter((e) => e.type.includes(category));
 
   const handleCategory = (changeCategory: string) => {

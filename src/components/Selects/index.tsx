@@ -57,34 +57,37 @@ const customStyles = {
 };
 
 const Selects = () => {
-  const [DEFAULT, setDefault] = useState(null);
+  const [defaultValue, setDefaultValue] = useState(null);
+  const handleChange = (e: any) => {
+    setDefaultValue(e);
+    console.log(defaultValue);
+  };
   return (
     <div className={s.container}>
       <div className={s.flex}>
         <Select
           options={MATERIALS}
-          defaultValue={DEFAULT}
+          defaultValue={defaultValue}
           styles={customStyles}
           placeholder="ВЫБРАТЬ МАТЕРИАЛ"
+          onChange={handleChange}
         />
         <Select
           options={SIZES}
-          defaultValue={DEFAULT}
+          defaultValue={defaultValue}
           styles={customStyles}
           placeholder="ВЫБРАТЬ РАЗМЕР"
+          onChange={handleChange}
         />
         <Select
           options={COATING}
-          defaultValue={DEFAULT}
+          defaultValue={defaultValue}
           styles={customStyles}
           placeholder="ВЫБРАТЬ ПОКРЫТИЕ"
+          onChange={handleChange}
         />
       </div>
-      {/* <form className={s.form}>
-        {ARRAY.map(({ mip, title }: ArrayType, index) => {
-          return <Select key={index} hidden={title} subscribes={mip} />;
-        })}
-      </form> */}
+
       <Button style="send">ОСТАВИТЬ ЗАЯВКУ</Button>
     </div>
   );
