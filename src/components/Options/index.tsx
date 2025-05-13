@@ -6,86 +6,90 @@ import { Link } from "react-router-dom";
 import cn from "classnames";
 
 const OPTIONSARRAY = [
-  { text: "Административные  помещения", value: "admin" },
-  { text: "Спортивные объекты", value: "sport" },
-  { text: "Общепит", value: "cafe" },
-  { text: "Образовательные учреждения", value: "school" },
-  { text: "Офисные помещения", value: "offis" },
-  { text: "Производство", value: "production" },
-  { text: "Склады и терминалы", value: "warehouse" },
-  { text: "Автозаправки и НПЗ", value: "gas" },
-  { text: "Торговые центры", value: "mall" },
-  { text: "Детские заведения", value: "children" },
-  { text: "Аквапарки", value: "water" },
-  { text: "Входные группы", value: "enter" },
-  { text: "Пути эвакуации", value: "evacuation" },
-  { text: "ЖД и автовокзалы", value: "bus" },
-  { text: "Аэро- и речпорты", value: "airport" },
-  { text: "Медицинские учреждения", value: "medical" },
+  { text: "Административные  помещения", value: ["admin"] },
+  { text: "Спортивные объекты", value: ["sport"] },
+  { text: "Общепит", value: ["cafe"] },
+  { text: "Образовательные учреждения", value: ["school"] },
+  { text: "Офисные помещения", value: ["offis"] },
+  { text: "Производство", value: ["production"] },
+  { text: "Склады и терминалы", value: ["warehouse"] },
+  { text: "Автозаправки и НПЗ", value: ["gas"] },
+  { text: "Торговые центры", value: ["mall", "children"] },
+  { text: "Детские заведения", value: ["mall", "children"] },
+  { text: "Аквапарки", value: ["water"] },
+  { text: "Входные группы", value: ["enter"] },
+  { text: "Пути эвакуации", value: ["evacuation"] },
+  { text: "ЖД и автовокзалы", value: ["bus"] },
+  { text: "Аэро- и речпорты", value: ["airport"] },
+  { text: "Медицинские учреждения", value: ["medical"] },
 ];
 
 interface OptionsArrayType {
   text: string;
-  value: string;
+  value: string[];
 }
 
 const GOODS = [
-  { img: "../img/imgCork.png", title: "Панели — Эконом Pixel", type: "bus" },
+  { img: "../img/imgCork.png", title: "Панели — Эконом Pixel", type: ["bus"] },
   {
     img: "../img/imgCork.png",
     title: "Панели окрашенные — Econom",
-    type: "evacuation",
+    type: ["evacuation"],
   },
   { img: "../img/imgCork.png", title: "Панели — Econom Loft", type: "cafe" },
   {
     img: "../img/imgCork.png",
     title: "Панели HPL пластик — Practic",
-    type: "water",
+    type: ["water"],
   },
 
   {
     img: "../img/imgCork.png",
     title: "Панели с натуральным шпоном — Elite",
-    type: "sport",
+    type: ["sport"],
   },
   {
     img: "../img/imgCork.png",
     title: "Панели с ПВХ пленкой — InTerior",
-    type: "medical",
+    type: ["medical"],
   },
   {
     img: "../img/imgCork.png",
     title: "Декоративный профиль для панелей",
-    type: "airport",
+    type: ["airport"],
   },
   {
     img: "../img/imgCork.png",
     title: "Отбойная доска — Design",
-    type: "enter",
+    type: ["enter"],
   },
 
   {
     img: "../img/imgCork.png",
     title: "Потолочные панели —INTERPAN Mercury",
-    type: "children",
+    type: ["mall", "children"],
   },
   {
     img: "../img/imgCork.png",
     title: "Фасадные и цокольные панели — ExTerior",
-    type: "mall",
+    type: ["mall", "children"],
   },
   {
     img: "../img/imgCork.png",
     title: "Панели антибактериальные — Farma ",
-    type: "gas",
+    type: ["gas"],
   },
-  { img: "../img/imgCork.png", title: "Плита без покрытия", type: "warehouse" },
+  {
+    img: "../img/imgCork.png",
+    title: "Плита без покрытия",
+    type: ["warehouse"],
+  },
 ];
 
 interface GoodsType {
   img: string;
   title: string;
-  type: string;
+  // type: string[];
 }
 
 const SUBSCRIBES = [
@@ -101,15 +105,18 @@ interface SubscribesType {
 }
 
 const Options = () => {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState([""]);
   //в стейте массив
-  const filterGoods = GOODS.filter((e) => e.type.includes(category));
+  const filterGoods = GOODS.filter(
+    (GOODS) => GOODS.type === category.toString()
+  );
 
-  const handleCategory = (changeCategory: string) => {
+  const handleCategory = (changeCategory: string[]) => {
     if (changeCategory === category) {
-      setCategory("");
+      setCategory([""]);
     } else {
       setCategory(changeCategory);
+      console.log(category);
     }
   };
 
