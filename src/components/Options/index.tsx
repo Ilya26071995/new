@@ -14,8 +14,8 @@ const OPTIONSARRAY = [
   { text: "Производство", value: ["production"] },
   { text: "Склады и терминалы", value: ["warehouse"] },
   { text: "Автозаправки и НПЗ", value: ["gas"] },
-  { text: "Торговые центры", value: ["mall", "children"] },
-  { text: "Детские заведения", value: ["mall", "children"] },
+  { text: "Торговые центры", value: ["mall"] },
+  { text: "Детские заведения", value: ["children"] },
   { text: "Аквапарки", value: ["water"] },
   { text: "Входные группы", value: ["enter"] },
   { text: "Пути эвакуации", value: ["evacuation"] },
@@ -105,24 +105,25 @@ interface SubscribesType {
 }
 
 const Options = () => {
-  const [category, setCategory] = useState([""]);
+  const [category, setCategory] = useState<string[]>([]);
 
-  const filterGoods = GOODS.filter(
-    (GOODS) => GOODS.type === category.toString()
+  const filterGoods = GOODS.filter((GOODS) =>
+    GOODS.type.toString().includes(category.toString())
   );
 
   const handleCategory = (changeCategory: string[]) => {
-    if (changeCategory === category) {
-      setCategory([""]);
+    if (category.includes(changeCategory.toString())) {
+      setCategory(category.filter((cat) => cat !== changeCategory.toString()));
     } else {
-      setCategory(changeCategory);
-      console.log(category);
+      setCategory([...category, changeCategory.toString()]);
+    }
+    if (category.length > 1) {
+      setCategory(category.slice(0, 2));
+      setCategory(category.slice(1));
     }
   };
 
-  const clickHandler = (event: any) => {
-    event.preventDefault();
-  };
+  console.log(category);
 
   return (
     <div className={s.big}>
@@ -133,17 +134,11 @@ const Options = () => {
             {OPTIONSARRAY.map(({ text, value }: OptionsArrayType, index) => (
               <li
                 key={index}
-                className={s.option}
+                className={cn(s.option, s.opt)}
                 value={value}
                 onClick={() => handleCategory(value)}
               >
-                <a
-                  className={s.opt}
-                  href="#"
-                  onClick={(event) => clickHandler(event)}
-                >
-                  {text}
-                </a>
+                {text}
               </li>
             ))}
           </ul>
