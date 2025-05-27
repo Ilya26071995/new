@@ -107,18 +107,32 @@ interface SubscribesType {
 const Options = () => {
   const [category, setCategory] = useState<string[]>([]);
 
-  const filterGoods = GOODS.filter((GOODS) =>
-    GOODS.type.toString().includes(category.toString())
-  );
+  const filterGoods = GOODS.filter((item) => {
+    switch (item.type.length) {
+      case 1:
+        return item.type.includes(category[0]);
+      case 2:
+        return category.filter((good) => {
+          return item.type.includes(good);
+        });
+      default:
+        return true;
+    }
+  });
 
   const handleCategory = (changeCategory: string[]) => {
     if (category.includes(changeCategory.toString())) {
       setCategory(category.filter((cat) => cat !== changeCategory.toString()));
     } else {
       if (category.length === 2) {
-        setCategory(category.slice(1));
+        setCategory((prev) => {
+          const newCategory = prev.slice(1);
+          return [...newCategory, changeCategory.toString()];
+        });
+
+        // setCategory([...category, changeCategory.toString()]);
       } else {
-        setCategory([...category, changeCategory.toString()]);
+        setCategory((prev) => [...prev, changeCategory.toString()]);
       }
     }
   };
