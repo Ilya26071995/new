@@ -115,11 +115,11 @@ const Options = () => {
     if (category.includes(changeCategory.toString())) {
       setCategory(category.filter((cat) => cat !== changeCategory.toString()));
     } else {
-      setCategory([...category, changeCategory.toString()]);
-    }
-    if (category.length > 1) {
-      setCategory(category.slice(0, 2));
-      setCategory(category.slice(1));
+      if (category.length === 2) {
+        setCategory(category.slice(1));
+      } else {
+        setCategory([...category, changeCategory.toString()]);
+      }
     }
   };
 
