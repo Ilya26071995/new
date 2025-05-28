@@ -36,7 +36,7 @@ const GOODS = [
     title: "Панели окрашенные — Econom",
     type: ["evacuation"],
   },
-  { img: "../img/imgCork.png", title: "Панели — Econom Loft", type: "cafe" },
+  { img: "../img/imgCork.png", title: "Панели — Econom Loft", type: ["cafe"] },
   {
     img: "../img/imgCork.png",
     title: "Панели HPL пластик — Practic",
@@ -108,16 +108,23 @@ const Options = () => {
   const [category, setCategory] = useState<string[]>([]);
 
   const filterGoods = GOODS.filter((item) => {
-    switch (item.type.length) {
-      case 1:
-        return item.type.includes(category[0]);
-      case 2:
-        return category.filter((good) => {
-          return item.type.includes(good);
-        });
-      default:
-        return true;
+    if (category.length === 0) {
+      return true;
     }
+
+    if (category.length === 1) {
+      return item.type.includes(category[0]);
+    }
+
+    if (category.length === 2) {
+      return (
+        item.type.length === 2 &&
+        category.every((cat) => item.type.includes(cat)) &&
+        item.type.every((cat) => category.includes(cat))
+      );
+    }
+
+    return false;
   });
 
   const handleCategory = (changeCategory: string[]) => {
@@ -146,12 +153,7 @@ const Options = () => {
           <h2 className={s.title}>Функциональная зона</h2>
           <ul className={s.list}>
             {OPTIONSARRAY.map(({ text, value }: OptionsArrayType, index) => (
-              <li
-                key={index}
-                className={cn(s.option, s.opt)}
-                value={value}
-                onClick={() => handleCategory(value)}
-              >
+              <li key={index} className={cn(s.option, s.opt)} value={value} onClick={() => handleCategory(value)}>
                 {text}
               </li>
             ))}
@@ -167,20 +169,18 @@ const Options = () => {
                 <img src={img} />
                 <h3 className={s.titleMini}>{title}</h3>
                 <div className={s.subscribes}>
-                  {SUBSCRIBES.map(
-                    ({ subscribe, style }: SubscribesType, index) => (
-                      <span className={s[style]} key={index}>
-                        {subscribe}
-                      </span>
-                    )
-                  )}
+                  {SUBSCRIBES.map(({ subscribe, style }: SubscribesType, index) => (
+                    <span className={s[style]} key={index}>
+                      {subscribe}
+                    </span>
+                  ))}
                 </div>
               </li>
             </Link>
           ))}
         </ul>
       </div>
-      <Button style="btn">показать еще</Button>
+      <Button style='btn'>показать еще</Button>
     </div>
   );
 };
