@@ -127,11 +127,7 @@ const Options = () => {
     return false;
   });
 
-  const [showButton, setShowButton] = useState(true);
-
   const handleCategory = (changeCategory: string[]) => {
-    setShowButton(!showButton);
-    console.log(showButton);
     if (category.includes(changeCategory.toString())) {
       setCategory(category.filter((cat) => cat !== changeCategory.toString()));
     } else {
@@ -189,7 +185,7 @@ const Options = () => {
           ))}
         </ul>
       </div>
-      <div className={showButton ? s.show : s.close}>
+      <div className={category.length >= 1 ? s.close : s.show}>
         <Button style="btn">показать еще</Button>
       </div>
     </div>
