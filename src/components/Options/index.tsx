@@ -127,7 +127,11 @@ const Options = () => {
     return false;
   });
 
+  const [showButton, setShowButton] = useState(true);
+
   const handleCategory = (changeCategory: string[]) => {
+    setShowButton(!showButton);
+    console.log(showButton);
     if (category.includes(changeCategory.toString())) {
       setCategory(category.filter((cat) => cat !== changeCategory.toString()));
     } else {
@@ -136,8 +140,6 @@ const Options = () => {
           const newCategory = prev.slice(1);
           return [...newCategory, changeCategory.toString()];
         });
-
-        // setCategory([...category, changeCategory.toString()]);
       } else {
         setCategory((prev) => [...prev, changeCategory.toString()]);
       }
@@ -187,7 +189,9 @@ const Options = () => {
           ))}
         </ul>
       </div>
-      <Button style="btn">показать еще</Button>
+      <div className={showButton ? s.show : s.close}>
+        <Button style="btn">показать еще</Button>
+      </div>
     </div>
   );
 };
