@@ -1,6 +1,6 @@
 import React from "react";
 import { BigTitle } from "../../components/BigTitle";
-import { Connection } from "../../components/Connection";
+import { Connection } from "../../components/Connection/Index";
 import { Download } from "../../components/Download";
 import { Footer } from "../../components/Footer";
 import { Info } from "../../components/Info";
@@ -14,11 +14,11 @@ const Home = () => {
     <div>
       <Helmet>
         <title>Home</title>
-        <meta name='description' content='Главная страница сайта' />
+        <meta name="description" content="Главная страница сайта" />
       </Helmet>
       <Connection />
       <Navigation />
-      <BigTitle text='Каталог' img='../img/imgCork.png' alt='картинка' />
+      <BigTitle text="Каталог" img="../img/imgCork.png" alt="картинка" />
       <Options />
       <Info />
       <Subscription />

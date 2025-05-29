@@ -153,7 +153,12 @@ const Options = () => {
           <h2 className={s.title}>Функциональная зона</h2>
           <ul className={s.list}>
             {OPTIONSARRAY.map(({ text, value }: OptionsArrayType, index) => (
-              <li key={index} className={cn(s.option, s.opt)} value={value} onClick={() => handleCategory(value)}>
+              <li
+                key={index}
+                className={cn(s.option, s.opt)}
+                value={value}
+                onClick={() => handleCategory(value)}
+              >
                 {text}
               </li>
             ))}
@@ -169,18 +174,20 @@ const Options = () => {
                 <img src={img} />
                 <h3 className={s.titleMini}>{title}</h3>
                 <div className={s.subscribes}>
-                  {SUBSCRIBES.map(({ subscribe, style }: SubscribesType, index) => (
-                    <span className={s[style]} key={index}>
-                      {subscribe}
-                    </span>
-                  ))}
+                  {SUBSCRIBES.map(
+                    ({ subscribe, style }: SubscribesType, index) => (
+                      <span className={s[style]} key={index}>
+                        {subscribe}
+                      </span>
+                    )
+                  )}
                 </div>
               </li>
             </Link>
           ))}
         </ul>
       </div>
-      <Button style='btn'>показать еще</Button>
+      <Button style="btn">показать еще</Button>
     </div>
   );
 };
