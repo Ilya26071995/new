@@ -51,7 +51,7 @@ const Projects = () => {
         <div className={s.arrows}>
           {ARROWS.map(({ img, alt }: ArrowsType, index) => {
             return (
-              <a href="#" key={index}>
+              <a href='#' key={index}>
                 <img src={img} alt={alt}></img>
               </a>
             );
@@ -59,38 +59,29 @@ const Projects = () => {
         </div>
       </div>
       <div className={s.GoodsProjects}>
+        {/* TODO: Перестань ставить типизацию к деструктурированным пропам. Проверь все файлы, где такое есть и убери */}
         {GOODS.map(({ img, text, alt }: GoodsType, index) => {
           return <GoodsProjects img={img} text={text} alt={alt} key={index} />;
         })}
       </div>
       <div className={s.flex}>
         <div className={s.bigFlex}>
-          <img
-            className={cn(s.left, s.arrow)}
-            src="./img/arrowRight.svg"
-            alt="back"
-          />{" "}
+          <img className={cn(s.left, s.arrow)} src='./img/arrowRight.svg' alt='back' />{" "}
           <div className={s.miniFlex}>
             {" "}
-            <h2 className={s.miniTitle}>Предыдущая категория</h2>{" "}
-            <p className={s.miniText}>Плита без покрытия</p>
+            <h2 className={s.miniTitle}>Предыдущая категория</h2> <p className={s.miniText}>Плита без покрытия</p>
           </div>
         </div>
         <div>
           <Link to={"/"}>
-            <img src="./img/back.svg" alt="back" />
+            <img src='./img/back.svg' alt='back' />
           </Link>
         </div>
         <div className={s.bigFlex}>
           <div className={s.miniFlex}>
-            <h2 className={s.miniTitle}>Следующая категория</h2>{" "}
-            <p className={s.miniText}>Econom loft</p>
+            <h2 className={s.miniTitle}>Следующая категория</h2> <p className={s.miniText}>Econom loft</p>
           </div>
-          <img
-            className={cn(s.right, s.arrow)}
-            src="./img/arrowRight.svg"
-            alt="back"
-          />
+          <img className={cn(s.right, s.arrow)} src='./img/arrowRight.svg' alt='back' />
         </div>
       </div>
     </div>

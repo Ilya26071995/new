@@ -66,6 +66,7 @@ interface PropsType {
   text: string;
 }
 
+// TODO: Схему лучше выносить в отдельный файл, например, validations/index.ts
 const schema = yup.object({
   material: yup.string(),
   size: yup.string(),
@@ -116,9 +117,10 @@ const RightForm = () => {
           options={MATERIALS}
           defaultValue={defaultValue}
           styles={customStyles}
-          placeholder="ВЫБРАТЬ МАТЕРИАЛ"
+          placeholder='ВЫБРАТЬ МАТЕРИАЛ'
           onChange={handleChange}
         />
+        {/* TODO: Комментарии из кода нужно удалять, проверь все файлы */}
         {/* <select {...register("material")} className={s.select}>
           <option className={s.option} hidden>
             Выбрать материал
@@ -139,7 +141,7 @@ const RightForm = () => {
           options={SIZES}
           defaultValue={defaultValue}
           styles={customStyles}
-          placeholder="ВЫБРАТЬ РАЗМЕР"
+          placeholder='ВЫБРАТЬ РАЗМЕР'
           onChange={handleChange}
         />
       </label>
@@ -147,22 +149,12 @@ const RightForm = () => {
         Сколько панелей
         <br /> вы купили?
         <div className={s.miniFlex}>
-          <input
-            {...register("quantity")}
-            type="number"
-            placeholder="Количество панелей"
-            className={s.input}
-          />
+          <input {...register("quantity")} type='number' placeholder='Количество панелей' className={s.input} />
           <p className={s.error}>{errors.quantity?.message}</p>
         </div>
       </label>
       <div className={s.miniHead}>
-        <input
-          className={s.btn}
-          type="submit"
-          value="Рассчитать"
-          onClick={clickFun}
-        />
+        <input className={s.btn} type='submit' value='Рассчитать' onClick={clickFun} />
         <h3 className={s.head}>Детальная информация:</h3>
       </div>
       {click ? (

@@ -151,12 +151,7 @@ const Options = () => {
           <h2 className={s.title}>Функциональная зона</h2>
           <ul className={s.list}>
             {OPTIONSARRAY.map(({ text, value }: OptionsArrayType, index) => (
-              <li
-                key={index}
-                className={cn(s.option, s.opt)}
-                value={value}
-                onClick={() => handleCategory(value)}
-              >
+              <li key={index} className={cn(s.option, s.opt)} value={value} onClick={() => handleCategory(value)}>
                 {text}
               </li>
             ))}
@@ -166,19 +161,18 @@ const Options = () => {
       </div>
       <div className={s.bigContainer}>
         <ul className={s.goods}>
+          {/* TODO: Перестань ставить типизацию к деструктурированным пропам (если навести на filterGoods, то там уже есть типизация, которая сама подставилась) */}
           {filterGoods.map(({ img, title }: GoodsType, index) => (
             <Link to={"/econom"} key={index}>
               <li className={s.good}>
                 <img src={img} />
                 <h3 className={s.titleMini}>{title}</h3>
                 <div className={s.subscribes}>
-                  {SUBSCRIBES.map(
-                    ({ subscribe, style }: SubscribesType, index) => (
-                      <span className={s[style]} key={index}>
-                        {subscribe}
-                      </span>
-                    )
-                  )}
+                  {SUBSCRIBES.map(({ subscribe, style }: SubscribesType, index) => (
+                    <span className={s[style]} key={index}>
+                      {subscribe}
+                    </span>
+                  ))}
                 </div>
               </li>
             </Link>
@@ -186,7 +180,7 @@ const Options = () => {
         </ul>
       </div>
       <div className={category.length >= 1 ? s.close : s.show}>
-        <Button style="btn">показать еще</Button>
+        <Button style='btn'>показать еще</Button>
       </div>
     </div>
   );
