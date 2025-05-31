@@ -66,6 +66,7 @@ interface PropsType {
   text: string;
 }
 
+// TODO: Схему лучше выносить в отдельный файл, например, validations/index.ts
 const schema = yup.object({
   material: yup.string(),
   size: yup.string(),
