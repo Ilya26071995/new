@@ -9,11 +9,6 @@ const ARROWS = [
   { img: "../img/Right.svg", alt: "вперед" },
 ];
 
-interface ArrowsType {
-  img: string;
-  alt: string;
-}
-
 const GOODS = [
   {
     img: "../img/imgCork.png",
@@ -37,19 +32,13 @@ const GOODS = [
   },
 ];
 
-interface GoodsType {
-  img: string;
-  text: string;
-  alt: string;
-}
-
 const Projects = () => {
   return (
     <div className={s.container}>
       <div className={s.head}>
         <h2 className={s.title}>Выполненные проекты</h2>
         <div className={s.arrows}>
-          {ARROWS.map(({ img, alt }: ArrowsType, index) => {
+          {ARROWS.map(({ img, alt }, index) => {
             return (
               <a href="#" key={index}>
                 <img src={img} alt={alt}></img>
@@ -59,7 +48,7 @@ const Projects = () => {
         </div>
       </div>
       <div className={s.GoodsProjects}>
-        {GOODS.map(({ img, text, alt }: GoodsType, index) => {
+        {GOODS.map(({ img, text, alt }, index) => {
           return <GoodsProjects img={img} text={text} alt={alt} key={index} />;
         })}
       </div>

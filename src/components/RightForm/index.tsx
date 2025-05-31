@@ -119,18 +119,6 @@ const RightForm = () => {
           placeholder="ВЫБРАТЬ МАТЕРИАЛ"
           onChange={handleChange}
         />
-        {/* <select {...register("material")} className={s.select}>
-          <option className={s.option} hidden>
-            Выбрать материал
-          </option>
-          {MATERIALS.map((material, index) => {
-            return (
-              <option className={s.option} key={index}>
-                {material}
-              </option>
-            );
-          })}
-        </select> */}
       </label>
       <label className={s.label}>
         Размер плиты

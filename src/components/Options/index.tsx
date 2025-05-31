@@ -24,11 +24,6 @@ const OPTIONSARRAY = [
   { text: "Медицинские учреждения", value: ["medical"] },
 ];
 
-interface OptionsArrayType {
-  text: string;
-  value: string[];
-}
-
 const GOODS = [
   { img: "../img/imgCork.png", title: "Панели — Эконом Pixel", type: ["bus"] },
   {
@@ -86,23 +81,12 @@ const GOODS = [
   },
 ];
 
-interface GoodsType {
-  img: string;
-  title: string;
-  // type: string[];
-}
-
 const SUBSCRIBES = [
   { subscribe: "гсп", style: "red" },
   { subscribe: "гкм", style: "blue" },
   { subscribe: "смл", style: "green" },
   { subscribe: "гвл", style: "purple" },
 ];
-
-interface SubscribesType {
-  subscribe: string;
-  style: string;
-}
 
 const Options = () => {
   const [category, setCategory] = useState<string[]>([]);
@@ -150,7 +134,7 @@ const Options = () => {
         <div className={s.zone}>
           <h2 className={s.title}>Функциональная зона</h2>
           <ul className={s.list}>
-            {OPTIONSARRAY.map(({ text, value }: OptionsArrayType, index) => (
+            {OPTIONSARRAY.map(({ text, value }, index) => (
               <li
                 key={index}
                 className={cn(s.option, s.opt)}
@@ -166,19 +150,17 @@ const Options = () => {
       </div>
       <div className={s.bigContainer}>
         <ul className={s.goods}>
-          {filterGoods.map(({ img, title }: GoodsType, index) => (
+          {filterGoods.map(({ img, title }, index) => (
             <Link to={"/econom"} key={index}>
               <li className={s.good}>
                 <img src={img} />
                 <h3 className={s.titleMini}>{title}</h3>
                 <div className={s.subscribes}>
-                  {SUBSCRIBES.map(
-                    ({ subscribe, style }: SubscribesType, index) => (
-                      <span className={s[style]} key={index}>
-                        {subscribe}
-                      </span>
-                    )
-                  )}
+                  {SUBSCRIBES.map(({ subscribe, style }, index) => (
+                    <span className={s[style]} key={index}>
+                      {subscribe}
+                    </span>
+                  ))}
                 </div>
               </li>
             </Link>
