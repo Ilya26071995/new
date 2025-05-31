@@ -16,13 +16,6 @@ const FILES = [
   },
 ];
 
-interface FilesType {
-  img: string;
-  alt: string;
-  link: string;
-  text: string;
-}
-
 const Download = () => {
   return (
     <div className={s.container}>
@@ -30,7 +23,7 @@ const Download = () => {
         <h2 className={s.head}>Посмотрите презентации о наших продуктах</h2>
       </div>
       <div className={s.files}>
-        {FILES.map(({ img, alt, link, text }: FilesType, index) => (
+        {FILES.map(({ img, alt, link, text }, index) => (
           <div className={s.option} key={index}>
             <a className={s.flex} href={link} download>
               <img src={img} alt={alt} />

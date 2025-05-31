@@ -61,11 +61,6 @@ const POSTBIGCHECK = [
   { title: "Вес одной паллеты, кг ", text: "50" },
 ];
 
-interface PropsType {
-  title: string;
-  text: string;
-}
-
 // TODO: Схему лучше выносить в отдельный файл, например, validations/index.ts
 const schema = yup.object({
   material: yup.string(),
@@ -156,13 +151,13 @@ const RightForm = () => {
       </div>
       {click ? (
         <div className={s.flex}>
-          {BIGCHECK.map(({ title, text }: PropsType, index) => {
+          {BIGCHECK.map(({ title, text }, index) => {
             return <Check key={index} title={title} text={text} />;
           })}
         </div>
       ) : (
         <div className={s.flex}>
-          {POSTBIGCHECK.map(({ title, text }: PropsType, index) => {
+          {POSTBIGCHECK.map(({ title, text }, index) => {
             return <Check key={index} title={title} text={text} />;
           })}
         </div>

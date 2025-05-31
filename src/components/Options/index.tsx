@@ -150,7 +150,6 @@ const Options = () => {
       </div>
       <div className={s.bigContainer}>
         <ul className={s.goods}>
-          {/* TODO: Перестань ставить типизацию к деструктурированным пропам (если навести на filterGoods, то там уже есть типизация, которая сама подставилась) */}
           {filterGoods.map(({ img, title }, index) => (
             <Link to={"/econom"} key={index}>
               <li className={s.good}>

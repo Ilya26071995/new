@@ -55,11 +55,6 @@ const POSTCHECK = [
   { title: "Количество панелей, шт ", text: "30" },
 ];
 
-interface PropsType {
-  title: string;
-  text: string;
-}
-
 // TODO: Схему лучше выносить в отдельный файл, например, validations/index.ts
 const schema = yup.object({
   material: yup.string(),
@@ -111,7 +106,7 @@ const LeftForm = () => {
           options={MATERIALS}
           defaultValue={defaultValue}
           styles={customStyles}
-          placeholder='ВЫБРАТЬ МАТЕРИАЛ'
+          placeholder="ВЫБРАТЬ МАТЕРИАЛ"
           onChange={handleChange}
         />
       </label>
@@ -122,7 +117,7 @@ const LeftForm = () => {
           options={SIZES}
           defaultValue={defaultValue}
           styles={customStyles}
-          placeholder='ВЫБРАТЬ РАЗМЕР'
+          placeholder="ВЫБРАТЬ РАЗМЕР"
           onChange={handleChange}
         />
       </label>
@@ -130,25 +125,35 @@ const LeftForm = () => {
         Сколько панелей
         <br /> вы купили?
         <div className={s.miniFlex}>
-          <input {...register("quantity")} type='number' placeholder='Количество панелей' className={s.input} />
+          <input
+            {...register("quantity")}
+            type="number"
+            placeholder="Количество панелей"
+            className={s.input}
+          />
           <p className={s.error}>{errors.quantity?.message}</p>
         </div>
       </label>
       <label className={s.label}>
         Сколько квадратных
         <br /> метров вы купили?
-        <input className={s.input} type='number' {...register("meters")} />
+        <input className={s.input} type="number" {...register("meters")} />
       </label>
-      <input className={s.btn} type='submit' value='Рассчитать' onClick={clickFun} />
+      <input
+        className={s.btn}
+        type="submit"
+        value="Рассчитать"
+        onClick={clickFun}
+      />
       {click ? (
         <div>
-          {CHECK.map(({ title, text }: PropsType, index) => {
+          {CHECK.map(({ title, text }, index) => {
             return <Check key={index} title={title} text={text} />;
           })}
         </div>
       ) : (
         <div>
-          {POSTCHECK.map(({ title, text }: PropsType, index) => {
+          {POSTCHECK.map(({ title, text }, index) => {
             return <Check key={index} title={title} text={text} />;
           })}
         </div>

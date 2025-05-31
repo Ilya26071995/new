@@ -15,16 +15,10 @@ const SOCIALICONS = [
   },
 ];
 
-interface SocialIconsType {
-  link: string;
-  img: string;
-  text: string;
-}
-
 const SocialIcon = () => {
   return (
     <div className={s.soc}>
-      {SOCIALICONS.map(({ link, img, text }: SocialIconsType, index) => (
+      {SOCIALICONS.map(({ link, img, text }, index) => (
         <a href={link} key={index} target="_blank">
           <img src={img} alt={text} />
         </a>

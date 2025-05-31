@@ -11,11 +11,6 @@ const NAVS = [
   { href: "/contacts", text: "КОНТАКТЫ" },
 ];
 
-interface NavsType {
-  href: string;
-  text: string;
-}
-
 const Navigation = () => {
   return (
     <div className={s.container}>
@@ -26,7 +21,7 @@ const Navigation = () => {
       </div>
       <div className={s.mini}>
         <ul className={s.list}>
-          {NAVS.map(({ href, text }: NavsType, index) => (
+          {NAVS.map(({ href, text }, index) => (
             <li key={index}>
               <Link to={href} className={s.link}>
                 {text}

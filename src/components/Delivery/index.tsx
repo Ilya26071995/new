@@ -20,15 +20,10 @@ const INFO = [
   },
 ];
 
-interface InfoType {
-  title: string;
-  text: string;
-}
-
 const Delivery = () => {
   return (
     <div className={s.background}>
-      {INFO.map(({ title, text }: InfoType, index) => (
+      {INFO.map(({ title, text }, index) => (
         <div className={s.block} key={index}>
           <h2 className={s.title}>{title}</h2>
           <p className={s.text}>{text}</p>

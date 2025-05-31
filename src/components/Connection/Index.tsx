@@ -8,9 +8,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
-// TODO: Файл должен называться с маленькой буквы.
-
-const CONNECTION = [
+const connection = [
   {
     link: "mailto:https://mail.ru/",
     vid: "mail",
@@ -25,13 +23,6 @@ const CONNECTION = [
   },
   { link: "#", vid: "btn", text: "ОСТАВИТЬ ЗАЯВКУ" },
 ];
-
-interface ConnectionsType {
-  link: string;
-  vid: string;
-  text: string;
-  img?: string;
-}
 
 // TODO: Перенеси в отдельный файл, например, в validations/index.ts
 const schema = yup.object({
@@ -80,19 +71,19 @@ const Connection = () => {
         <div className={s.cont}>
           <label className={s.label}>
             Ваше имя
-            <input className={s.input} type='text' {...register("name")} />
+            <input className={s.input} type="text" {...register("name")} />
           </label>
           <p className={s.error}>{errors.name?.message}</p>
         </div>
         <div className={s.cont}>
           <label className={s.label}>
             Ваш номер телефона
-            <input className={s.input} type='text' {...register("phone")} />
+            <input className={s.input} type="text" {...register("phone")} />
           </label>
           <p className={s.error}>{errors.phone?.message}</p>
         </div>
         <div className={s.buttons}>
-          <input className={s.button} type='submit' value='Заказать звонок' />{" "}
+          <input className={s.button} type="submit" value="Заказать звонок" />{" "}
           <button className={s.close} onClick={closeModal}>
             Закрыть
           </button>
@@ -104,7 +95,7 @@ const Connection = () => {
   return (
     <div className={s.container}>
       <div className={s.connect}>
-        {CONNECTION.map(({ link, vid, text, img }: ConnectionsType, index) => (
+        {connection.map(({ link, vid, text, img }, index) => (
           <div className={s.link} key={index}>
             <img src={img} className={img} />
             <a className={s[vid]} href={link} onClick={openModal}>
@@ -113,7 +104,12 @@ const Connection = () => {
           </div>
         ))}
         {ReactDOM.createPortal(
-          <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false} className={s.modal}>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            ariaHideApp={false}
+            className={s.modal}
+          >
             {modalContent}
           </Modal>,
           document.body

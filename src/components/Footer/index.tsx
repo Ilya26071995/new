@@ -12,11 +12,6 @@ const NAVS = [
   { href: "https//www.cd.ru", text: "Контакты" },
 ];
 
-interface NavsType {
-  href: string;
-  text: string;
-}
-
 const CONNECTIONS = [
   {
     link: "mailto:https://mail.ru/",
@@ -31,12 +26,6 @@ const CONNECTIONS = [
     img: "../img/phone.svg",
   },
 ];
-interface ConnectionsType {
-  link: string;
-  vid: string;
-  text: string;
-  img?: string;
-}
 
 const Footer = () => {
   return (
@@ -56,7 +45,7 @@ const Footer = () => {
         <div>
           <h2 className={s.title}>Меню</h2>
           <ul className={s.list}>
-            {NAVS.map(({ href, text }: NavsType, index) => (
+            {NAVS.map(({ href, text }, index) => (
               <li key={index}>
                 <a href={href} className={s.link}>
                   {text}
@@ -68,16 +57,14 @@ const Footer = () => {
         <div className={s.connect}>
           <div className={s.flex}>
             <h2 className={s.title}>Связаться с нами</h2>
-            {CONNECTIONS.map(
-              ({ link, vid, text, img }: ConnectionsType, index) => (
-                <div className={s.link} key={index}>
-                  <img src={img} className={img} />
-                  <a className={s[vid]} href={link}>
-                    {text}
-                  </a>
-                </div>
-              )
-            )}
+            {CONNECTIONS.map(({ link, vid, text, img }, index) => (
+              <div className={s.link} key={index}>
+                <img src={img} className={img} />
+                <a className={s[vid]} href={link}>
+                  {text}
+                </a>
+              </div>
+            ))}
             <div>
               <h3 className={s.smallText}>Мы в социальных сетях:</h3>
               <SocialIcon />
