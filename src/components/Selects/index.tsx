@@ -58,8 +58,8 @@ const customStyles = {
 
 const Selects = () => {
   const [defaultValue, setDefaultValue] = useState(null);
-  const handleChange = (e: any) => {
-    setDefaultValue(e);
+  const handleChange = (defaultValue: any) => {
+    setDefaultValue(defaultValue);
     console.log(defaultValue);
   };
   return (

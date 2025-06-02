@@ -3,8 +3,9 @@ import s from "./RightForm.module.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Check } from "../Check";
-import * as yup from "yup";
+
 import Select from "react-select";
+import { RightSchema } from "../../validations";
 
 const customStyles = {
   option: (provided: any, state: any) => ({
@@ -61,20 +62,6 @@ const POSTBIGCHECK = [
   { title: "Вес одной паллеты, кг ", text: "50" },
 ];
 
-// TODO: Схему лучше выносить в отдельный файл, например, validations/index.ts
-const schema = yup.object({
-  material: yup.string(),
-  size: yup.string(),
-  quantity: yup
-    .string()
-    .required("Укажите количество панелей")
-    .matches(/([0-9])/, "Только цифры"),
-  meters: yup
-    .string()
-    .required("Укажите количество квадратных метров")
-    .matches(/([0-9])/, "Только цифры"),
-});
-
 const RightForm = () => {
   const {
     register,
@@ -83,7 +70,7 @@ const RightForm = () => {
     reset,
   } = useForm({
     mode: "onChange",
-    resolver: yupResolver(schema),
+    resolver: yupResolver(RightSchema),
   });
 
   const onSubmit = (data: any) => {
@@ -98,8 +85,8 @@ const RightForm = () => {
   };
 
   const [defaultValue, setDefaultValue] = useState(null);
-  const handleChange = (e: any) => {
-    setDefaultValue(e);
+  const handleChange = (defaultValue: any) => {
+    setDefaultValue(defaultValue);
     console.log(defaultValue);
   };
   return (

@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Check } from "../Check";
 import * as yup from "yup";
 import Select from "react-select";
+import { LeftSchema } from "../../validations";
 
 const customStyles = {
   option: (provided: any, state: any) => ({
@@ -55,20 +56,6 @@ const POSTCHECK = [
   { title: "Количество панелей, шт ", text: "30" },
 ];
 
-// TODO: Схему лучше выносить в отдельный файл, например, validations/index.ts
-const schema = yup.object({
-  material: yup.string(),
-  size: yup.string(),
-  quantity: yup
-    .string()
-    .required("Укажите количество панелей")
-    .matches(/([0-9])/, "Только цифры"),
-  meters: yup
-    .string()
-    .required("Укажите количество квадратных метров")
-    .matches(/([0-9])/, "Только цифры"),
-});
-
 const LeftForm = () => {
   const {
     register,
@@ -77,7 +64,7 @@ const LeftForm = () => {
     reset,
   } = useForm({
     mode: "onChange",
-    resolver: yupResolver(schema),
+    resolver: yupResolver(LeftSchema),
   });
 
   const onSubmit = (data: any) => {
@@ -91,8 +78,9 @@ const LeftForm = () => {
   };
 
   const [defaultValue, setDefaultValue] = useState(null);
-  const handleChange = (e: any) => {
-    setDefaultValue(e);
+
+  const handleChange = (defaultValue: any) => {
+    setDefaultValue(defaultValue);
     console.log(defaultValue);
   };
 
