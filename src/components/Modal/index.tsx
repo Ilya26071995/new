@@ -5,12 +5,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ModalSchema } from "../../validations";
 
-interface PropsType {
+interface ModalProps {
   active: boolean;
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Modal = ({ active, setActive }: PropsType) => {
+const Modal = ({ active, setActive }: ModalProps) => {
   const onSubmit = (data: any) => {
     console.log(data);
     reset();
