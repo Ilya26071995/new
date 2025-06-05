@@ -32,7 +32,6 @@ const Form = () => {
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
   };
-  console.log(inputValue);
 
   return (
     <div className={s.container}>
