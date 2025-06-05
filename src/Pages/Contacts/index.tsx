@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Contacts.module.scss";
 import { Navigation } from "../../components/Navigation";
-import { Connection } from "../../components/Connection/Index";
+import { Connection } from "../../components/Connections";
 import { BigTitle } from "../../components/BigTitle/index";
 import { Picture } from "../../components/Picture";
 import { Communication } from "../../components/Communication";

@@ -126,8 +126,6 @@ const Options = () => {
     }
   };
 
-  console.log(category);
-
   return (
     <div className={s.big}>
       <div className={s.container}>
@@ -137,7 +135,9 @@ const Options = () => {
             {OPTIONSARRAY.map(({ text, value }, index) => (
               <li
                 key={index}
-                className={cn(s.option, s.opt)}
+                className={
+                  category.includes(value.toString()) ? s.optFocus : s.opt
+                }
                 value={value}
                 onClick={() => handleCategory(value)}
               >

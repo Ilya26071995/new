@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Econom.module.scss";
-import { Connection } from "../../components/Connection/Index";
+import { Connection } from "../../components/Connections";
 import { Navigation } from "../../components/Navigation";
 import { BigTitle } from "../../components/BigTitle";
 import { CardInfo } from "../../components/CardInfo";

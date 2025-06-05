@@ -6,8 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { ModalSchema } from "../../validations";
 
 interface PropsType {
-  active: any;
-  setActive: any;
+  active: boolean;
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Modal = ({ active, setActive }: PropsType) => {

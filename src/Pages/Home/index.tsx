@@ -1,6 +1,5 @@
 import React from "react";
 import { BigTitle } from "../../components/BigTitle";
-import { Connection } from "../../components/Connection/Index";
 import { Download } from "../../components/Download";
 import { Footer } from "../../components/Footer";
 import { Info } from "../../components/Info";
@@ -8,6 +7,7 @@ import { Navigation } from "../../components/Navigation";
 import { Options } from "../../components/Options";
 import { Subscription } from "../../components/Subscription";
 import { Helmet } from "react-helmet";
+import { Connection } from "../../components/Connections";
 
 const Home = () => {
   return (
