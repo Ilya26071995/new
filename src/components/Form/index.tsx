@@ -21,11 +21,18 @@ const Form = () => {
     reset();
   };
 
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
 
   const clickFun = () => {
     setDisabled((prevdisabled) => !prevdisabled);
   };
+
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event: any) => {
+    setInputValue(event.target.value);
+  };
+  console.log(inputValue);
 
   return (
     <div className={s.container}>
@@ -38,6 +45,7 @@ const Form = () => {
             type="text"
             id="name"
             {...register("name")}
+            onChange={handleInputChange}
           />
           <p>{errors.name?.message}</p>
         </label>
@@ -48,6 +56,7 @@ const Form = () => {
             type="text"
             id="phone"
             {...register("phone")}
+            onChange={handleInputChange}
           />
           <p>{errors.phone?.message}</p>
         </label>
@@ -58,6 +67,7 @@ const Form = () => {
             type="text"
             id="organization"
             {...register("organization")}
+            onChange={handleInputChange}
           />
           <p>{errors.organization?.message}</p>
         </label>
@@ -68,6 +78,7 @@ const Form = () => {
             type="text"
             id="mail"
             {...register("mail")}
+            onChange={handleInputChange}
           />
           <p>{errors.mail?.message}</p>
         </label>
@@ -97,10 +108,13 @@ const Form = () => {
             </p>
           </div>
           <input
-            className={cn(s.btn, !disabled ? s.false : "")}
+            className={cn(
+              !disabled && inputValue.length > 0 ? s.btn : s.false,
+              s.btn
+            )}
             type="submit"
             value="Отправить"
-            disabled={!disabled}
+            disabled={disabled}
           />
         </div>
       </form>
